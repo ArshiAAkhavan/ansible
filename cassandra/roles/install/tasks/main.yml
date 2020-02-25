@@ -1,2 +1,7 @@
 ---
 # tasks file for install
+- name: systemctl daemon-reload
+  systemd:
+    daemon_reload: yes 
+- debug:
+    msg: "hi"

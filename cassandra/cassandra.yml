@@ -7,4 +7,4 @@
     #   cluster_name: cluster_name
     #   allow_clean_up: clean_up
     #   allow_firewall_config: allow_firewall_config
-    #   allow_run: allow_run
+    #   tallow_run: allow_run
