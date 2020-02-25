@@ -27,3 +27,4 @@ sysctl config:
 13)?	net.ipv4.tcp_rmem=4096 87380 16777216	
 14)?	net.ipv4.tcp_wmem=4096 65536 16777216
 
+15)     sysctl -p -----------> for reloading
