@@ -1,2 +1,17 @@
 ---
 # tasks file for ./roles/cassandra
+- name: clean up play
+  import_tasks: clean_up.yml
+
+- name: firewall configure play
+  import_tasks: firewall_config.yml
+
+- name: installing play
+  import_tasks: install.yml
+  
+- name: cluster configure play
+  import_tasks: cluster_config.yml
+  
+- name: cluster start play
+  import_tasks: cluster_start.yml
+  
