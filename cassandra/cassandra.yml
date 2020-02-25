@@ -2,9 +2,17 @@
 - hosts: all
   tasks:
   - import_role:
-      name: ../cassandra
-    # vars:
-    #   cluster_name: cluster_name
-    #   allow_clean_up: clean_up
-    #   allow_firewall_config: allow_firewall_config
-    #   tallow_run: allow_run
+      name: install
+    vars:
+      allow_clean_up: clean_up
+      allow_firewall_config: allow_firewall_config
+  
+  - import_role:
+      name: config
+    vars:
+      cluster_name: cluster_name
+      
+  - import_role:
+      name: run
+    vars:
+      allow_run: allow_run
