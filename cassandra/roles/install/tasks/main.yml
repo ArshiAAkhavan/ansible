@@ -1,11 +1,2 @@
 ---
 # tasks file for install
-- name: firewall configuration
-  import_role:
-    name: firewall
-  vars:
-    allow_clean_up: clean_up
-    allow_firewall_config: allow_firewall_config
-#   when: ansible_facts['os_family']|lower == 'redhat'
-# - import_tasks: debian.yml
-#   when: ansible_facts['os_family']|lower == 'debian'

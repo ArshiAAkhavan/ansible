@@ -2,11 +2,14 @@
 - hosts: all
   tasks:
   - import_role:
-      name: install
+      name: prerequisites
     vars:
-      allow_clean_up: clean_up
+      allow_clean_up: allow_clean_up
       allow_firewall_config: allow_firewall_config
   
+  - import_role:
+      name: install
+
   - import_role:
       name: config
     vars:
