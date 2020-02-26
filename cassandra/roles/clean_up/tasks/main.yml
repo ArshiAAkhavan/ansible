@@ -6,6 +6,8 @@
     systemd:
       name: cassandra
       state: stopped
+    ignore_errors: yes
+
   - name: deleting the directories --> lib
     file:
       path: /var/lib/cassandra
@@ -30,7 +32,7 @@
 - name: systemctl daemon-reload
   systemd:
     daemon_reload: yes
-
+  when: allow_clean_up=='true'
 
 
 

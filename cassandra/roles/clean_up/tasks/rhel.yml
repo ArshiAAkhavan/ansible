@@ -3,4 +3,6 @@
   yum:
     name: datastax-ddc
     state: removed
+  ignore_errors: yes
+    
 

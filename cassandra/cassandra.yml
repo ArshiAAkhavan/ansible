@@ -9,13 +9,14 @@
   
   - import_role:
       name: install
+    vars:
+      allow_install: allow_install
 
   - import_role:
       name: config
-    vars:
-      cluster_name: cluster_name
-      
+         
   - import_role:
       name: run
+    throttle: 1
     vars:
       allow_run: allow_run

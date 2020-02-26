@@ -2,16 +2,17 @@
 # tasks file for install
 - name: cassandra installation playbook for RHEL-based systems
   import_tasks: rhel.yml
-  when: ansible_facts['os_family']|lower == 'redhat'
+  when: ansible_facts['os_family']|lower == 'redhat' and allow_install=='true'
 
 - name: cassandra installation playbook for Debian-based systems
   import_tasks: debian.yml
-  when: ansible_facts['os_family']|lower == 'debian'
+  when: ansible_facts['os_family']|lower == 'debian' and allow_install=='true'
 
 - name: enabling cassandra
   systemd:
     name: cassandra
     enabled: yes
+  when: allow_install=='true'
 
 
 
