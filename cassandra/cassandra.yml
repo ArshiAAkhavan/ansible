@@ -1,22 +1,28 @@
 ---
-- hosts: all
+- name: prerequisites setup
+  hosts: all
   tasks:
   - import_role:
       name: prerequisites
     vars:
       allow_clean_up: allow_clean_up
       allow_firewall_config: allow_firewall_config
-  
+- name: installation
+  hosts: all
+  tasks:
   - import_role:
       name: install
     vars:
       allow_install: allow_install
-
+- name: configuration
+  hosts: all
+  tasks:
   - import_role:
-      name: config
-         
+      name: config 
+- name: starting the cluster
+  hosts: all
+  tasks:
   - import_role:
       name: run
-    throttle: 1
     vars:
       allow_run: allow_run
