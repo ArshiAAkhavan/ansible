@@ -7,7 +7,7 @@
 
 # The name of the cluster. This is mainly used to prevent machines in
 # one logical cluster from joining another.
-cluster_name: '{{cluster_setting.cluster_name}}'
+cluster_name: '{{cluster_name}}'
 
 # This defines the number of tokens randomly assigned to this node on the ring
 # The more tokens, relative to other nodes, the larger the proportion of data
@@ -136,7 +136,7 @@ roles_validity_in_ms: 2000
 # completes. If roles_validity_in_ms is non-zero, then this must be
 # also.
 # Defaults to the same value as roles_validity_in_ms.
-roles_update_interval_in_ms: {{cluster_setting.roles_update_interval_in_ms}}
+roles_update_interval_in_ms: {{roles_update_interval_in_ms}}
 
 # Validity period for permissions cache (fetching permissions can be an
 # expensive operation depending on the authorizer, CassandraAuthorizer is
@@ -559,7 +559,7 @@ memtable_allocation_type: heap_buffers
 #
 # The default value is the min of 4096 mb and 1/8th of the total space
 # of the drive where cdc_raw_directory resides.
-cdc_total_space_in_mb:{{cluster_setting.cdc_total_space_in_mb}}
+cdc_total_space_in_mb:{{cdc_total_space_in_mb}}
 
 # When we hit our cdc_raw limit and the CDCCompactor is either running behind
 # or experiencing backpressure, we check at the following interval to see if any
@@ -609,7 +609,7 @@ ssl_storage_port: 7001
 #
 # Setting listen_address to 0.0.0.0 is always wrong.
 #
-listen_address: {{item.hostname}}
+listen_address: {{ansible_default_ipv4.address}}
 
 # Set listen_address OR listen_interface, not both. Interfaces must correspond
 # to a single address, IP aliasing is not supported.
@@ -672,7 +672,7 @@ native_transport_port: 9042
 # native_transport_max_concurrent_connections_per_ip: -1
 
 # Whether to start the thrift rpc server.
-start_rpc: {{cluster_setting.start_rpc}}
+start_rpc: {{start_rpc}}
 
 # The address or interface to bind the Thrift RPC service and native transport
 # server to.
@@ -686,7 +686,7 @@ start_rpc: {{cluster_setting.start_rpc}}
 # set broadcast_rpc_address to a value other than 0.0.0.0.
 #
 # For security reasons, you should not expose this port to the internet.  Firewall it if needed.
-rpc_address: {{item.hostname}}
+rpc_address: {{ansible_default_ipv4.address}}
 
 # Set rpc_address OR rpc_interface, not both. Interfaces must correspond
 # to a single address, IP aliasing is not supported.
@@ -821,7 +821,7 @@ column_index_cache_size_in_kb: 2
 # 
 # If your data directories are backed by SSD, you should increase this
 # to the number of cores.
-concurrent_compactors: {{cluster_setting.concurrent_compactors}}
+concurrent_compactors: {{concurrent_compactors}}
 
 # Throttles compaction to the given total throughput across the entire
 # system. The faster you insert data, the faster you need to compact in
@@ -959,7 +959,7 @@ cross_node_timeout: false
 #
 # You can use a custom Snitch by setting this to the full class name
 # of the snitch, which will be assumed to be on your classpath.
-endpoint_snitch: {{cluster_setting.endpoint_snitch}}
+endpoint_snitch: {{endpoint_snitch}}
 
 # controls how often to perform the more expensive part of host score
 # calculation
@@ -1166,10 +1166,10 @@ tombstone_failure_threshold: 100000
 
 # Log WARN on any multiple-partition batch size exceeding this value. 5kb per batch by default.
 # Caution should be taken on increasing the size of this threshold as it can lead to node instability.
-batch_size_warn_threshold_in_kb:{{cluster_setting.batch_size_warn_threshold_in_kb}}
+batch_size_warn_threshold_in_kb:{{batch_size_warn_threshold_in_kb}}
 
 # Fail any multiple-partition batch exceeding this value. 50kb (10x warn threshold) by default.
-batch_size_fail_threshold_in_kb: {{cluste_setting.batch_size_fail_threshold_in_kb}}
+batch_size_fail_threshold_in_kb: {{batch_size_fail_threshold_in_kb}}
 
 # Log WARN on any batches not of type LOGGED than span across more partitions than this limit
 unlogged_batch_across_partitions_warn_threshold: 10
