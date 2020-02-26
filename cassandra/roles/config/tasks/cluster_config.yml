@@ -6,7 +6,7 @@
     dest: /etc/cassandra/conf/cassandra.yaml
     force: yes
 
-- name: removing the extra ","
+- name: removing the extra "," in 'seeds:",...'
   replace:
     path: /etc/cassandra/conf/cassandra.yaml
     regexp: '^(.*- seeds\: "),(.*")$'

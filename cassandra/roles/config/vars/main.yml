@@ -1,13 +1,5 @@
 ---
 # vars file for config
-nodes:
-  - hostname: 94.130.97.241
-    rack: rack1
-    dc: dc1
-
-  - hostname: 159.69.91.229
-    rack: rack2
-    dc: dc1
     
 seed_nodes:
   - hostname: 94.130.97.241

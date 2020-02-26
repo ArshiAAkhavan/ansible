@@ -2,7 +2,6 @@
 # tasks file for clean_up
 - name: stop and deleting the directopries 
   block:
-  # when: allow_clean_up=='true'
   - name: stoping the cassandra
     systemd:
       name: cassandra
@@ -19,6 +18,7 @@
     file:
       path: /etc/cassandra
       state: absent
+  when: allow_clean_up=='true'
 
 - name: uninstalling the cassandra for RHEL-based systems
   import_tasks: rhel.yml

@@ -6,3 +6,6 @@
     owner: root
     group: root
     mode: '644'
+
+- name: sysctl -p
+  command: sysctl -p
