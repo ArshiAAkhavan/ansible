@@ -1,5 +1,5 @@
 ---
-- name: unistalling the cassandra
+- name: .:(RHEL):. unistalling the cassandra
   yum:
     name: datastax-ddc
     state: removed

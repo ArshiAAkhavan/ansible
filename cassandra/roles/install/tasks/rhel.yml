@@ -1,9 +1,9 @@
-- name: installing java-jre version 1.8.0
+- name: .:(RHEL):. installing java-jre version 1.8.0
   yum:
     name: java-1.8.0-openjdk
     state: installed
 
-- name: copying the yum repo for cassandra to the remote
+- name: .:(RHEL):. copying the yum repo for cassandra to the remote
   copy:
     src: files/cassandra.repo
     dest: /etc/yum.repos.d/cassandra.repo
@@ -11,7 +11,7 @@
     group: root
     mode: '644'
 
-- name: installing the cassandra
+- name: .:(RHEL):. installing the cassandra
   yum:
     name: datastax-ddc
     state: installed

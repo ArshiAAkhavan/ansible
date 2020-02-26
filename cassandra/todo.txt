@@ -28,3 +28,7 @@ sysctl config:
 14)?	net.ipv4.tcp_wmem=4096 65536 16777216
 
 15)     sysctl -p -----------> for reloading
+
+
+
+systemctl enable cassandra 

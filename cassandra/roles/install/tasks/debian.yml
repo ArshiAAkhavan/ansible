@@ -1,9 +1,9 @@
-- name: installing java-jre version 1.8.0
+- name: .:(Debian):. installing java-jre version 1.8.0
   yum:
     name: openjdk-8-jdk
     state: present
 
-- name: adding the cassandra repo to the remote
+- name: .:(Debian):. adding the cassandra repo to the remote
   lineinfile:
     create: yes
     path: /etc/apt/sources.list.d/cassandra.sources.list
@@ -12,10 +12,10 @@
     group: root
     mode: '644'
     
-- name: adding the datastax key
+- name: .:(Debian):. adding the datastax key
   shell: curl -L https://debian.datastax.com/debian/repo_key | sudo apt-key add -
 
-- name: installing cassandra
+- name: .:(Debian):. installing cassandra
   apt:
     name: datastax-ddc
     update_cache: yes
