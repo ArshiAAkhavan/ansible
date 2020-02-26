@@ -1,0 +1,8 @@
+- name: copying the sysctl.conf to the remote
+  copy:
+    src: files/sysctl.conf
+    dest: /etc/sysctl.conf
+    force: yes
+    owner: root
+    group: root
+    mode: '644'

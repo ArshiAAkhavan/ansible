@@ -1,2 +1,23 @@
 ---
 # vars file for config
+nodes:
+  - hostname: 94.130.97.241
+    rack: rack1
+    dc: dc1
+
+  - hostname: 159.69.91.229
+    rack: rack2
+    dc: dc1
+    
+seed_nodes:
+  - hostname: 94.130.97.241
+
+cluster_setting:
+  - cluster_name: ansible-test
+    roles_update_interval_in_ms: 2000
+    concurrent_compactors: 2
+    endpoint_snitch: GossipingPropertyFileSnitch   
+    cdc_total_space_in_mb: 1713
+    batch_size_warn_threshold_in_kb: 1024
+    batch_size_fail_threshold_in_kb: 1024
+    start_rpc: true
