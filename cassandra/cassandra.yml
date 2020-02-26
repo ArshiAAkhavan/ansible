@@ -21,6 +21,7 @@
       name: config 
 - name: starting the cluster
   hosts: all
+  serial: 1
   tasks:
   - import_role:
       name: run

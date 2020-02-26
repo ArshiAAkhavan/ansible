@@ -20,3 +20,7 @@
       name: cassandra
     ignore_errors: yes 
   when: allow_run=='true'
+
+- name: sleep for 120 seconds before starting the play for another nodes
+  wait_for:
+    timeout: 120
