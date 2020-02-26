@@ -1,0 +1,5 @@
+---
+- name: unistalling the cassandra
+  apt:
+    name: datastax-ddc
+    state: absent

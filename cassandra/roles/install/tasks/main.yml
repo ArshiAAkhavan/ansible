@@ -8,5 +8,10 @@
   import_tasks: debian.yml
   when: ansible_facts['os_family']|lower == 'debian'
 
+- name: enabling cassandra
+  systemd:
+    name: cassandra
+    enabled: yes
+
 
 

@@ -5,14 +5,14 @@
     daemon_reload: yes
 
 - name: starting the seed nodes
-  when: ansible_default_ipv4.address in groups['Seed_Nodes']
+  when: ansible_default_ipv4.address in groups['Seed_Nodes'] and allow_run=='true'
   systemd:
     state: started
     name: cassandra
   ignore_errors: yes
 
 - name: starting rest of the nodes
-  when: ansible_default_ipv4.address not in groups['Seed_Nodes']
+  when: ansible_default_ipv4.address not in groups['Seed_Nodes'] and allow_run=='true'
   systemd:
     state: started
     name: cassandra

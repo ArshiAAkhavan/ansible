@@ -1,0 +1,6 @@
+---
+- name: unistalling the cassandra
+  yum:
+    name: datastax-ddc
+    state: removed
+
