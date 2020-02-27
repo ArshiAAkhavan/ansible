@@ -24,7 +24,6 @@
 
 - name: starting the cluster(seed nodes)
   hosts: Seed_Nodes
-  serial: 1
   tasks:
   - import_role:
       name: run
