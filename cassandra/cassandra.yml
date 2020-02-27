@@ -7,23 +7,33 @@
     vars:
       allow_clean_up: allow_clean_up
       allow_firewall_config: allow_firewall_config
+
 - name: installation
   hosts: all
   tasks:
   - import_role:
       name: install
-    vars:
-      allow_install: allow_install
+    when: allow_install=='true'
+
 - name: configuration
   hosts: all
   tasks:
   - import_role:
       name: config 
-- name: starting the cluster
-  hosts: all
+    when: allow_config=='true'
+
+- name: starting the cluster(seed nodes)
+  hosts: Seed_Nodes
   serial: 1
   tasks:
   - import_role:
       name: run
-    vars:
-      allow_run: allow_run
+    when: allow_run=='true'
+
+- name: starting the cluster(rest of the nodes)
+  hosts: all, !Seed_Nodes
+  serial: 1
+  tasks:
+  - import_role:
+      name: run
+    when: allow_run=='true'
