@@ -1,10 +1,25 @@
 ---
-- name: .:(RHEL):. ensure that the firewall is up and running --> installing
+- name: .:(RHEL):. installing the firewall
   yum:
     name: firewalld
     state: present
 
-- name: .:(RHEL):. ensure that the firewall is up and running --> up and running
+- name:
+  debug:
+    msg: "{{ansible_ssh_port}}"
+
+- name: .:(RHEL):. allowing ssh 
+  firewalld:
+    port: item/tcp
+    permanent: yes
+    state: enabled
+  with_items:
+  - ansible_ssh_port
+
+- name: .:(RHEL):. reloading the firewall
+  command: firewall-cmd --reload 
+
+- name: .:(RHEL):. ensure that the firewall is up and running
   systemd:
     enabled: true
     state: started

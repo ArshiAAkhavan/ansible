@@ -14,4 +14,4 @@
 - name: ensuring that the cassandra node is up and joined to the cluster
   wait_for:
     port: 7199
-    delay: 3
+    delay: 30
