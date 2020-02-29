@@ -7,7 +7,7 @@
 
 - name: starting the nodes
   systemd:
-    state: started
+    state: restarted
     name: cassandra
   ignore_errors: yes
 
