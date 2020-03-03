@@ -3,12 +3,10 @@
 - name: firewall configuration
   import_role:
     name: firewall
-  vars:
-    allow_firewall_config: allow_firewall_config
+  when: allow_firewall_config=='true'
 
 - name: removeing the footprints of previous cassandra
   import_role:
     name: clean_up
-  vars:
-    allow_clean_up: allow_clean_up
+  when: allow_clean_up=='true'
   
