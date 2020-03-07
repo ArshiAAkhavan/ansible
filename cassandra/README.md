@@ -1,31 +1,40 @@
-Role Name
+Cassandra cluster
 =========
 
 A brief description of the role goes here.
 
+this is a playbook for deploying a cassandra cluster
+
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+this playbook works base on ssh protocol so enabled ssh cominucation is required
+this playbook by default installs(if neccessery) and configure the firewall so that only nodes can communicate to one another(you can disable it by setting the 'allow_firewall_config' to false)
 
-Role Variables
+so if the ssh is set on diffrent port and you dont have any firewall installed on your servers and you wish the play book to configure it for you, please install the firewall yourself and add your ssh port to the firewall
+
+Playbook Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+there are two key variable set that needs to be set in this playe book
+1)cassandra-hosts.txt wich contains the informations about nodes IP_address, dataCenter, rack, and the seed nodes 
+
+2)roles/config/vars/main.yml witch contains the cluster information such as cluster name and ...
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+no special dependencies is required for this playbook
+note that this playbook only deploys the cluster on Debian and RHEL based systems
 
-Example Playbook
+How To Use
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+just simply run the command below on an ansible-system
+```
+ansible-playbook -i cassandra-hosts.txt cassandra.yml --extra-vars='{"allow_firewall_config":"true" , "allow_clean_up":"true" , "allow_install":"true" , "allow_config":"true" , "allow_run":"true"}'
+```
+where each variable passad by --extra-vars disables a role if not set to false
 
 License
 -------
