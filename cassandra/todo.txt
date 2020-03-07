@@ -1,33 +1,33 @@
 cassandra cluster config:
-1) 	cluster name
-2)	seed nodes
-3)	cdc_total_space_in_mb
-4)	listen_address
-5) ?	start_rpc
-6)	concurrent_compactors
-7)	endpoint_snitch
-8)	batch_size_warn_threshold_in_kb
-9)	batch_size_fail_threshold_in_kb
-10)?	# enable_sasi_indexes: true
+1) D 	cluster name
+2) D	seed nodes
+3) D	cdc_total_space_in_mb
+4) D	listen_address
+5) D	start_rpc
+6) D?	concurrent_compactors
+7) D	endpoint_snitch
+8) D	batch_size_warn_threshold_in_kb
+9) D	batch_size_fail_threshold_in_kb
+10)D?	# enable_sasi_indexes: true
 
 
 sysctl config:
-1) ?	fs.file-max = 262144	
-2) ?	net.ipv6.conf.all.disable_ipv6 = 1	
-3) ?	net.ipv6.conf.default.disable_ipv6 = 1	
-4) ?	vm.max_map_count = 1048575	
-5) ?	net.ipv4.tcp_keepalive_time=60	
-6) ?	net.ipv4.tcp_keepalive_probes=3	
-7) ?	net.ipv4.tcp_keepalive_intvl=10	
-8) ?	net.core.rmem_max=16777216	
-9) ?	net.core.wmem_max=16777216	
-10)?	net.core.rmem_default=16777216	
-11)?	net.core.wmem_default=16777216	
-12)?	net.core.optmem_max=40960	
-13)?	net.ipv4.tcp_rmem=4096 87380 16777216	
-14)?	net.ipv4.tcp_wmem=4096 65536 16777216
+1) D?	fs.file-max = 262144	
+2) D?	net.ipv6.conf.all.disable_ipv6 = 1	
+3) D?	net.ipv6.conf.default.disable_ipv6 = 1	
+4) D?	vm.max_map_count = 1048575	
+5) D?	net.ipv4.tcp_keepalive_time=60	
+6) D?	net.ipv4.tcp_keepalive_probes=3	
+7) D?	net.ipv4.tcp_keepalive_intvl=10	
+8) D?	net.core.rmem_max=16777216	
+9) D?	net.core.wmem_max=16777216	
+10)D?	net.core.rmem_default=16777216	
+11)D?	net.core.wmem_default=16777216	
+12)D?	net.core.optmem_max=40960	
+13)D?	net.ipv4.tcp_rmem=4096 87380 16777216	
+14)D?	net.ipv4.tcp_wmem=4096 65536 16777216
 
-15)     sysctl -p -----------> for reloading
+15)D    sysctl -p -----------> for reloading
 
 
 
