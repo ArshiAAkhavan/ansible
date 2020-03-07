@@ -1,8 +1,6 @@
 Cassandra cluster
 =========
 
-A brief description of the role goes here.
-
 this is a playbook for deploying a cassandra cluster
 
 Requirements
@@ -18,9 +16,9 @@ Playbook Variables
 
 there are two key variable set that needs to be set in this playe book
 
-1)cassandra-hosts.txt wich contains the informations about nodes IP_address, dataCenter, rack, and the seed nodes 
+1) cassandra-hosts.txt wich contains the informations about nodes IP_address, dataCenter, rack, and the seed nodes 
 
-2)roles/config/vars/main.yml witch contains the cluster information such as cluster name and ...
+2) roles/config/vars/main.yml witch contains the cluster information such as cluster name and ...
 
 Dependencies
 ------------

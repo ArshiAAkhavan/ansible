@@ -1,38 +1,54 @@
-Role Name
+firewall
 =========
 
-A brief description of the role goes here.
+this role sets up the firewall for each node
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+note that if 'allow_firewall_config' is set to true this role will set up a firewall so that only the cluster nodes can see each other and will block ssh if it is using any other port
+
+so if you are using ssh on other ports pleas install the firewall your self and add the ssh port to it manually
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+anisble_ssh_port
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
-
-Example Playbook
-----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
-
-License
--------
-
-BSD
+none
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+e-mail: a_akhavan@outlook.com
+
+github: ArshiAAkhavan
+Clean Up
+=========
+
+this role cleans up the footprints of previous cassandra cluster
+
+Requirements
+------------
+
+none
+
+Role Variables
+--------------
+
+none
+
+Dependencies
+------------
+
+none
+
+Author Information
+------------------
+
+e-mail: a_akhavan@outlook.com
+
+github: ArshiAAkhavan
