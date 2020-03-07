@@ -17,6 +17,7 @@ Playbook Variables
 --------------
 
 there are two key variable set that needs to be set in this playe book
+
 1)cassandra-hosts.txt wich contains the informations about nodes IP_address, dataCenter, rack, and the seed nodes 
 
 2)roles/config/vars/main.yml witch contains the cluster information such as cluster name and ...
@@ -25,6 +26,7 @@ Dependencies
 ------------
 
 no special dependencies is required for this playbook
+
 note that this playbook only deploys the cluster on Debian and RHEL based systems
 
 How To Use
@@ -36,12 +38,8 @@ ansible-playbook -i cassandra-hosts.txt cassandra.yml --extra-vars='{"allow_fire
 ```
 where each variable passad by --extra-vars disables a role if not set to false
 
-License
--------
-
-BSD
-
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+e-mail: a_akhavan@outlook.com
+github: ArshiAAkhavan
