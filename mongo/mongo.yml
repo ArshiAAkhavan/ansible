@@ -4,9 +4,7 @@
   tasks:
   - import_role:
       name: prerequisites
-    vars:
-      allow_clean_up: allow_clean_up
-      allow_firewall_config: allow_firewall_config
+    when: allow_firewall_config=='true'
 
 - name: installation
   hosts: all
@@ -22,16 +20,8 @@
       name: config 
     when: allow_config=='true'
 
-- name: starting the cluster(seed nodes)
-  hosts: Seed_Nodes
-  tasks:
-  - import_role:
-      name: run
-    when: allow_run=='true'
-
-- name: starting the cluster(rest of the nodes)
-  hosts: all, !Seed_Nodes
-  serial: 1
+- name: starting the cluster
+  hosts: all
   tasks:
   - import_role:
       name: run
