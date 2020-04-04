@@ -1,4 +1,4 @@
-install
+prerequisites
 =========
 
 this role just calls for the firewall role and clean_up role

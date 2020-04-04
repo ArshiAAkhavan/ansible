@@ -1,8 +1,7 @@
-install
+run
 =========
 
-this role installs the cassandra 3.2 package provided by datastax 
-(https://docs.datastax.com/en/archived/cassandra/3.x/index.html)
+this roles starts the ReplicaSet by runnig each node
 
 Author Information
 ------------------

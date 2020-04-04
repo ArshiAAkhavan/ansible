@@ -1,12 +1,8 @@
-config
+install
 =========
 
-cluster config and configuration needed for production
-
-Role Variables
---------------
-
-all variable set in the /vars/main.yml are used in cassandra.yaml file
+this role installs the cassandra 3.2 package provided by datastax 
+(https://docs.datastax.com/en/archived/cassandra/3.x/index.html)
 
 Author Information
 ------------------

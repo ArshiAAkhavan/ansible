@@ -1,17 +1,19 @@
-Clean Up
+firewall
 =========
 
-this role cleans up the footprints of previous cassandra cluster
+this role sets up the firewall for each node
 
 Requirements
 ------------
 
-none
+note that if 'allow_firewall_config' is set to true this role will set up a firewall so that only the cluster nodes can see each other and will block ssh if it is using any other port
+
+so if you are using ssh on other ports pleas install the firewall your self and add the ssh port to it manually
 
 Role Variables
 --------------
 
-none
+anisble_ssh_port
 
 Dependencies
 ------------
@@ -24,3 +26,5 @@ Author Information
 e-mail: a_akhavan@outlook.com
 
 github: ArshiAAkhavan
+
+
