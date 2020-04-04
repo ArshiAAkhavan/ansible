@@ -1,0 +1,19 @@
+---
+
+- name: cassandra.yaml template
+  template:
+    src: templates/cassandra_config.j2
+    dest: /etc/cassandra/conf/cassandra.yaml
+    force: yes
+
+- name: removing the extra "," in 'seeds:",...'
+  replace:
+    path: /etc/cassandra/conf/cassandra.yaml
+    regexp: '^(.*- seeds\: "),(.*")$'
+    replace: '\1\2'
+
+- name: cassandra-rackdc.properties template
+  template:
+    src: templates/cassandra_rackdc.j2
+    dest: /etc/cassandra/conf/cassandra-rackdc.properties
+    force: yes

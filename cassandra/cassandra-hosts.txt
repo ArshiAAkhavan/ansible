@@ -1,0 +1,14 @@
+[Nodes]
+159.69.91.229	rack=rack1	dc=dc1
+94.130.97.241	rack=rack2	dc=dc1
+116.203.183.94	rack=rack1	dc=dc2
+88.99.186.65	rack=rack2	dc=dc2
+
+[Seed_Nodes]
+94.130.97.241
+88.99.186.65
+
+[all:vars]
+ansible_connection=ssh
+ansible_user=root
+ansible_ssh_port=22022
