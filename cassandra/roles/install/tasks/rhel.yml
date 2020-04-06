@@ -11,7 +11,10 @@
     group: root
     mode: '644'
 
+# - name: .:(RHEL):. downgrading systemd to 219-62.el7_6.9 
+#   shell: yum downgrade http://vault.centos.org/7.6.1810/updates/x86_64/Packages/systemd-219-62.el7_6.9.x86_64.rpm http://vault.centos.org/7.6.1810/updates/x86_64/Packages/systemd-libs-219-62.el7_6.9.x86_64.rpm http://vault.centos.org/7.6.1810/updates/x86_64/Packages/systemd-sysv-219-62.el7_6.9.x86_64.rpm
+    
 - name: .:(RHEL):. installing the cassandra
   yum:
-    name: datastax-ddc
+    name: cassandra
     state: installed

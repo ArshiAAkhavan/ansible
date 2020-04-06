@@ -1,5 +1,7 @@
-[datastax-ddc] 
-name = DataStax Repo for Apache Cassandra
-baseurl = http://rpm.datastax.com/datastax-ddc/3.2
-enabled = 1
-gpgcheck = 0
+[cassandra]
+name=Apache Cassandra
+baseurl=https://www.apache.org/dist/cassandra/redhat/311x/
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://www.apache.org/dist/cassandra/KEYS
+

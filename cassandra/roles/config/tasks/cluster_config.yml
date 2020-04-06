@@ -3,7 +3,7 @@
 - name: cassandra.yaml template
   template:
     src: templates/cassandra_config.j2
-    dest: /etc/cassandra/conf/cassandra.yaml
+    dest: /etc/cassandra/default.conf/cassandra.yaml
     force: yes
 
 - name: removing the extra "," in 'seeds:",...'

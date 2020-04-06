@@ -4,10 +4,6 @@
     name: firewalld
     state: present
 
-- name:
-  debug:
-    msg: "{{ansible_ssh_port}}"
-
 - name: .:(RHEL):. allowing ssh 
   firewalld:
     port: item/tcp

@@ -1,7 +1,7 @@
 ---
 - name: .:(RHEL):. unistalling the cassandra
   yum:
-    name: datastax-ddc
+    name: cassandra
     state: removed
   ignore_errors: yes
     
