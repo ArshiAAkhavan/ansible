@@ -34,21 +34,3 @@
 
 
 
-# - name: Get cassandra PID from remote host
-#   ignore_errors: yes
-#   shell: "ps -few | grep cassandra | awk '{print $2}'"
-#   register: cassandra_PID
-# - name: Kill cassandra
-#   ignore_errors: yes
-#   shell: "kill {{ item }}"
-#   with_items: "{{ cassandra_PID.stdout_lines }}"
-# - wait_for:
-#     path: "/proc/{{ item }}/status"
-#     state: absent
-#   with_items: "{{ cassandra_PID.stdout_lines }}"
-#   ignore_errors: yes
-#   register: zombie_cassandra
-# - name: Force kill stuck processes
-#     shell: "kill -9 {{ item }}"
-#     ignore_errors: yes
-#     with_items: "{{ zombie_cassandra.results | select('failed') | map(attribute='item') | list }}"

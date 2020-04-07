@@ -32,9 +32,11 @@ How To Use
 
 just simply run the command below on an ansible-system
 ```
-ansible-playbook -i cassandra-hosts.txt cassandra.yml --extra-vars='{"allow_firewall_config":"true" , "allow_clean_up":"true" , "allow_install":"true" , "allow_config":"true" , "allow_run":"true"}'
+ansible-playbook -i cassandra-hosts.txt cassandra.yml --extra-vars='{"allow_firewall_config":"true" , "allow_clean_up":true" , "allow_install":"true" , "allow_config":"true" , "allow_run":"true" , "allow_systemd_downgrade":"true"}'
 ```
 where each variable passad by --extra-vars disables a role if not set to false
+
+p.s: there is some problem with the newest version of systemd and cassandra 3.11 so in order to install cassandra you may need to downgrade your systemd. if you are sure that your systemd current version is compatible with cassandra 3.11 then set "allow_systemd_downgrade" to "false"
 
 Author Information
 ------------------

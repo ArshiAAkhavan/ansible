@@ -14,6 +14,8 @@
   - import_role:
       name: install
     when: allow_install=='true'
+    vars:
+      allow_systemd_downgrade: allow_systemd_downgrade
 
 - name: configuration
   hosts: all
