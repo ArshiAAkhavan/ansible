@@ -1,0 +1,11 @@
+[scylla-3.3]
+name=Scylla for Centos - $basearch
+baseurl=https://repositories.scylladb.com/scylla/downloads/scylladb/ebf6cb4a-f429-4ce3-8f57-ed7f7d76cffc/scylla/rpm/centos/scylladb-3.3/$basearch/
+enabled=1
+gpgcheck=0
+
+[scylla-generic-3.3]
+name=Scylla for centos
+baseurl=https://repositories.scylladb.com/scylla/downloads/scylladb/ebf6cb4a-f429-4ce3-8f57-ed7f7d76cffc/scylla/rpm/centos/scylladb-3.3/noarch/
+enabled=1
+gpgcheck=0

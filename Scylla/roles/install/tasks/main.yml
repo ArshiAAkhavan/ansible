@@ -1,0 +1,20 @@
+---
+# tasks file for install
+- name: scylla installation playbook for RHEL-based systems
+  import_tasks: rhel.yml
+  when: ansible_facts['os_family']|lower == 'redhat'
+  vars:
+    allow_systemd_downgrade: allow_systemd_downgrade
+
+
+- name: scylla installation playbook for Debian-based systems
+  import_tasks: debian.yml
+  when: ansible_facts['os_family']|lower == 'debian'
+
+- name: enabling scylla
+  systemd:
+    name: scylla
+    enabled: yes
+
+
+

@@ -1,0 +1,13 @@
+cassandra cluster config:
+1) D 	cluster name
+2) D	seed nodes
+3) D	cdc_total_space_in_mb: 1713
+4) D	listen_address
+5) D	start_rpc
+6) D?	concurrent_compactors: 2
+7) 	compaction_throughput_mb_per_sec: 20
+7) D	endpoint_snitch: GossipingPropertyFileSnitch
+8) D	batch_size_warn_threshold_in_kb
+9) D	batch_size_fail_threshold_in_kb
+10)D?	# enable_sasi_indexes: true
+
