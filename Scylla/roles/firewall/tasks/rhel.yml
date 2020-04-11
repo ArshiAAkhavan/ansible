@@ -10,10 +10,6 @@
     permanent: yes
     state: enabled
 
-
-- name: .:(RHEL):. reloading the firewall
-  command: firewall-cmd --reload | cat
-
 - name: .:(RHEL):. ensure that the firewall is up and running
   systemd:
     enabled: true

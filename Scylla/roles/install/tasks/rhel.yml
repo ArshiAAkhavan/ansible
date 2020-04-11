@@ -24,5 +24,5 @@
     name: scylla
     state: installed
 
-- name: .:(RHEL):. runing Scylla_setup
-  shell: scylla_setup --disks /dev/sdb --nic eth0 | cat
+#- name: .:(RHEL):. runing Scylla_setup
+#  shell: scylla_setup --disks /dev/sdb --nic eth0 | cat
