@@ -5,6 +5,10 @@
     name: abrt
     state: absent
 
+- name: .:(RHEL):. installing epel-release package
+  yum:
+    name: epel-release
+    state: installed
 
 - name: .:(RHEL):. copying the yum repo for scylla to the remote
   copy:
@@ -20,5 +24,5 @@
     name: scylla
     state: installed
 
-# - name: .:(RHEL):. runing Scylla_setup
-#   shell: scylla_setup | cat
+- name: .:(RHEL):. runing Scylla_setup
+  shell: scylla_setup --disks /dev/sdb --nic eth0 | cat
