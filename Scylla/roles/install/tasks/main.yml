@@ -13,7 +13,7 @@
 
 - name: enabling scylla
   systemd:
-    name: scylla_server
+    name: scylla-server
     enabled: yes
 
 

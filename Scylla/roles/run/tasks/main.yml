@@ -8,7 +8,7 @@
 - name: starting the nodes
   systemd:
     state: restarted
-    name: scylla_server
+    name: scylla-server
   ignore_errors: yes
 
 - name: ensuring that the scylla node is up and joined to the cluster
