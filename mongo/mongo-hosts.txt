@@ -1,18 +1,14 @@
 [Nodes]
-159.69.91.229
-116.203.93.75
-94.130.97.241
+172.16.9.201
 
 [Primary]
-159.69.91.229
+172.16.9.201
 
 [Secondary]
-116.203.93.75
 
 [Arbiter]
-94.130.97.241
 
 [all:vars]
 ansible_connection=ssh
 ansible_user=root
-ansible_ssh_port=22022
+ansible_ssh_port=22

@@ -1,5 +1,10 @@
 ---
 
+- name: starting the mongod
+  systemd:
+    state: started
+    name: mongod
+
 - name: primary node config --> copying the template
   template:
     src: templates/primary.j2

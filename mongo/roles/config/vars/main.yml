@@ -1,4 +1,4 @@
 ---
 # vars file for config
 # replica set settings
-replicaSet_name: ansible-test
+replicaSet_name: tagrowlyze
