@@ -2,7 +2,7 @@
 # tasks file for clean_up
 - name: stoping the scylla
   systemd:
-    name: scylla
+    name: scylla-server
     state: stopped
   ignore_errors: yes
 
