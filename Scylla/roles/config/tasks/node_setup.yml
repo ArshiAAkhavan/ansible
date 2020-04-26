@@ -6,6 +6,7 @@
     src: "{{data_disk}}"
     fstype: ext4
     state: present
+  when: allow_disk_mount == 'true'
 
 - name: changing /var/lib/scylla owner --> (/var/lib/scylla)
   file:

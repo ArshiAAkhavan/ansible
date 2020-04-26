@@ -18,5 +18,6 @@ RFX: /dev/sdb
 
 
 # node configs
+allow_disk_mount: true
 data_disk: /dev/sdc
 file_system_type: ext4
