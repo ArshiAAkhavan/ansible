@@ -11,5 +11,12 @@ batch_size_warn_threshold_in_kb: 1024
 batch_size_fail_threshold_in_kb: 1024
 start_rpc: false
 
-# not used
+# scylla_setup configs
+NIC: ens160
+install_RFX: true
+RFX: /dev/sdb
 
+
+# node configs
+data_disk: /dev/sdc
+file_system_type: ext4

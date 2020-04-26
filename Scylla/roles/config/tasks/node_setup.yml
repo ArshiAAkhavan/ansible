@@ -1,0 +1,52 @@
+---
+
+- name: mounting the data_disk to the scylla directory
+  mount:
+    path: /var/lib/scylla
+    src: "{{data_disk}}"
+    fstype: ext4
+    state: present
+
+- name: changing /var/lib/scylla owner --> (/var/lib/scylla)
+  file:
+    path: /var/lib/scylla
+    state: present
+    owner: scylla
+    group: scylla
+
+- name: making the requied directories --> (/var/lib/scylla/data)
+  file:
+    path: /var/lib/scylla/data
+    state: present
+    owner: scylla
+    group: scylla
+
+- name: making the requied directories --> (/var/lib/scylla/commitlog)
+  file:
+    path: /var/lib/scylla/commitlog
+    state: present
+    owner: scylla
+    group: scylla
+
+- name: making the requied directories --> (/var/lib/scylla/hints)
+  file:
+    path: /var/lib/scylla/hints
+    state: present
+    owner: scylla
+    group: scylla
+
+- name: making the requied directories --> (/var/lib/scylla/saved_caches)
+  file:
+    path: /var/lib/scylla/save_caches
+    state: present
+    owner: scylla
+    group: scylla
+
+- name: generating the scylla_setup command
+  template:
+    src: templates/scylla_setup.j2
+    dest: /scylla_setup.sh
+    force: yes
+
+- name: running the scylla_setup command
+  shell: sh scylla_setup.sh | cat
