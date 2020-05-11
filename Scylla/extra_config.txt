@@ -1,1 +1,2 @@
 prefer_local=true
+enable_sstables_mc_format=true

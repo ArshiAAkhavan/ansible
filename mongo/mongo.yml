@@ -13,6 +13,14 @@
       name: install
     when: allow_install=='true'
 
+
+- name: starting the replica set
+  hosts: all
+  tasks:
+  - import_role:
+      name: run
+    when: allow_run=='true'
+
 - name: configuration
   hosts: all
   tasks:
@@ -20,9 +28,3 @@
       name: config 
     when: allow_config=='true'
 
-- name: starting the cluster
-  hosts: all
-  tasks:
-  - import_role:
-      name: run
-    when: allow_run=='true'

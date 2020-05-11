@@ -7,7 +7,7 @@
 
 - name: starting the nodes
   systemd:
-    state: restarted
+    state: started
     name: scylla-server
   ignore_errors: yes
 

@@ -2,7 +2,7 @@
 # vars file for config
 # cluster_setting:
 # the default values are taken from Brain's cassandra node
-cluster_name: ansible-test
+cluster_name: scylla-staging
 cdc_total_space_in_mb: 1713
 concurrent_compactors: 2
 compaction_throughput_mb_per_sec: 20
@@ -13,11 +13,6 @@ start_rpc: false
 
 # scylla_setup configs
 NIC: ens160
-install_RFX: true
-RFX: /dev/sdb
 
-
-# node configs
 allow_disk_mount: true
 data_disk: /dev/sdc
-file_system_type: ext4
