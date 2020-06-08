@@ -11,5 +11,8 @@ batch_size_warn_threshold_in_kb: 1024
 batch_size_fail_threshold_in_kb: 1024
 start_rpc: false
 
+
+# node config
+disable_swap: true
 # not used
 

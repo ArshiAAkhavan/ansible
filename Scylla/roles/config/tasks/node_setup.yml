@@ -1,4 +1,14 @@
 ---
+- name: Remove swapfile from /etc/fstab
+  mount:
+    name: swap
+    fstype: swap
+    state: absent
+  when: disable_swap == true
+
+- name: Disable swap
+  command: swapoff -a
+  when: disable_swap == true
 
 - name: generating the scylla_setup command
   template:

@@ -1,0 +1,24 @@
+---
+
+- name: copying the sysctl.conf to the remote
+  copy:
+    src: files/sysctl.conf
+    dest: /etc/sysctl.conf
+    force: yes
+    owner: root
+    group: root
+    mode: '644'
+
+- name: sysctl -p
+  command: sysctl -p
+
+- name: Remove swapfile from /etc/fstab
+  mount:
+    name: swap
+    fstype: swap
+    state: absent
+  when: disable_swap == 'true'
+
+- name: Disable swap
+  command: swapoff -a
+  when: disable_swap == 'true' && ansible_swaptotal_mb > 0

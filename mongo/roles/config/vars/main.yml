@@ -1,4 +1,4 @@
 ---
 # vars file for config
 # replica set settings
-replicaSet_name: tagrowlyze
+replicaSet_name: searchads_mongo_rs
