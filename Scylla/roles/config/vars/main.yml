@@ -2,7 +2,6 @@
 # vars file for config
 # cluster_setting:
 # the default values are taken from Brain's cassandra node
-cluster_name: scylla-staging
 cdc_total_space_in_mb: 1713
 concurrent_compactors: 2
 compaction_throughput_mb_per_sec: 20
@@ -19,4 +18,4 @@ disable_swap: true
 NIC: ens160
 
 allow_disk_mount: true
-data_disk: /dev/sdc
+data_disk: /dev/sdb
