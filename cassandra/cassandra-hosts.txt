@@ -1,10 +1,13 @@
 [Nodes]
 
-172.16.6.159    dc=datacenter1  rack=rack1
-172.16.6.161    dc=datacenter1  rack=rack1
-172.16.6.162	dc=datacenter1	rack=rack1
+172.16.18.151	dc=datacenter1  rack=rack1
+172.16.18.152	dc=datacenter1  rack=rack1
+172.16.18.153	dc=datacenter1	rack=rack1
 
 [Seed_Nodes]
+172.16.18.151
+172.16.18.152
+
 
 [all:vars]
 ansible_connection=ssh
