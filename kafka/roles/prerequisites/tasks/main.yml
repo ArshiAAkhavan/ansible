@@ -9,8 +9,16 @@
   debug:
     msg: allow_clean_up is '{{allow_clean_up}}'
 
-- name: removeing the footprints of previous cassandra
+- name: removeing the footprints of previous setups
   import_role:
     name: clean_up
   when: allow_clean_up=='true'
-  
+ 
+- name: setting up the proxy
+  import_role: proxy
+  when: allow_proxy_config=='true'
+
+- name: adding external disk
+  import_task: mount_disk.yml
+  when: allow_mount=='true'
+
