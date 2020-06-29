@@ -1,3 +1,7 @@
 *.swp
 
 raw/*
+cassandra/*
+mongo/*
+Scylla/*
+
