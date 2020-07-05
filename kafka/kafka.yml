@@ -1,31 +1,42 @@
 ---
-- name: prerequisites setup
-  hosts: broker
-  tasks:
-  - import_role:
-      name: prerequisites
-    vars:
-      allow_proxy_config: allow_proxy_config
-      allow_clean_up: allow_clean_up
-      allow_firewall_config: allow_firewall_config
+#- name: prerequisites setup
+#  hosts: Joining
+#  tasks:
+#  - import_role:
+#      name: prerequisites
+#    when: apply_prerequisites == 'true'
 
-- name: installation
-  hosts: all
-  tasks:
-  - import_role:
-      name: install
-    when: allow_install=='true'
+#- name: installation
+#  hosts: Joining
+#  tasks:
+#  - import_role:
+#      name: install
+#    when: allow_install== 'true'
 
 - name: configuration
-  hosts: all
+  hosts: Joining
   tasks:
   - import_role:
       name: config 
-    when: allow_config=='true'
+    when: allow_config== 'true'
 
-- name: starting the cluster
-  hosts: all 
+- name: starting the zookeeper nodes
+  hosts: Joining
+  serial: 1
   tasks:
   - import_role:
       name: run
-    when: allow_run=='true'
+    when: allow_run== 'true'
+    vars:
+      mode: 'zookeeper'
+
+- name: starting the kafka nodes
+  hosts: Joining
+  serial: 1
+  tasks:
+  - import_role:
+      name: run
+    when: allow_run== 'true'
+    vars:
+      mode: 'kafka'
+

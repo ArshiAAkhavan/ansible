@@ -1,0 +1,14 @@
+---
+
+- name: .:(zookeeper):. starting the nodes
+  systemd:
+    state: started
+    name: zookeeper
+  ignore_errors: yes
+
+- name: .:(zookeeper):. ensuring that the zookeeper node is up and joined to others
+  wait_for:
+    port: 3888
+    delay: 30
+
+

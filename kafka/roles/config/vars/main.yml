@@ -1,18 +1,15 @@
 ---
 # vars file for config
-# cluster_setting:
-# the default values are taken from Brain's cassandra node
-cluster_name: ansible-test
-cdc_total_space_in_mb: 1713
-concurrent_compactors: 2
-compaction_throughput_mb_per_sec: 20
-endpoint_snitch: GossipingPropertyFileSnitch   
-batch_size_warn_threshold_in_kb: 1024
-batch_size_fail_threshold_in_kb: 1024
-start_rpc: false
 
+# kafka:
+log_dir: /var/lib/kafka
+offsets_topic_RF: 3
+delete_topic_enable: true
 
-# node config
-disable_swap: true
-# not used
-
+# zookeepr:
+dataDir: /var/lib/zookeeper
+dataLogDir: /var/log/zookeeper
+maxClientCnxns: 50
+tickTime: 2000
+initLimit: 10
+syncLimit: 5

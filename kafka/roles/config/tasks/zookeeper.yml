@@ -1,0 +1,16 @@
+---
+
+- name: .:(zookeeper):. zookeeper.properties template
+  template:
+    src: templates/zookeeper.properties.j2
+    dest: /home/kafka/kafka/config/zookeeper.properties
+    force: yes
+
+
+- name: .:(zookeepr):. creating the zookeepr.serive file
+  copy:
+    src: files/zookeeper.service
+    dest: /etc/systemd/system/zookeeper.service
+    owner: root
+    group: root
+    mode: '644'

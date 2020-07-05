@@ -1,0 +1,36 @@
+butor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# the directory where the snapshot is stored.
+
+dataDir={{dataDir}}
+# the port at which the clients will connect
+clientPort=2181
+# Disable the adminserver by default to avoid port conflicts.
+
+dataLogDir={{dataLogDir}}
+# disable the per-ip limit on the number of connections since this is a non-production config
+maxClientCnxns={{maxClientCnxns}}
+
+# The number of milliseconds of each tick
+tickTime={{tickTime}}
+# The number of ticks that the initial
+# synchronization phase can take
+initLimit={{initLimit}}
+# The number of ticks that can pass between
+# sending a request and getting an acknowledgement
+syncLimit={{syncLimit}}
+
+{% for zookeeper in groups['Zookeeper'] %}server.{{loop.index}}={{zookeeper}}:2888:3888 
+{% endfor %}
+
