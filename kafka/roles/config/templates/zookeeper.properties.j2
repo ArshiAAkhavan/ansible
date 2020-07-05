@@ -31,6 +31,6 @@ initLimit={{initLimit}}
 # sending a request and getting an acknowledgement
 syncLimit={{syncLimit}}
 
-{% for zookeeper in groups['Zookeeper'] %}server.{{loop.index}}={{zookeeper}}:2888:3888 
+{% for zookeeper in groups['Zookeeper'] %}server.{{loop.index}}={{zookeeper}}:2888:3888
 {% endfor %}
 

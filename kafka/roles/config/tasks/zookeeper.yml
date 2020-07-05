@@ -14,3 +14,27 @@
     owner: root
     group: root
     mode: '644'
+
+- name: .:(zookeeper):. creating the data directory
+  file:
+    path: '{{dataDir}}'
+    state: directory
+    owner: kafka
+    group: kafka
+    mode: '0755'
+
+- name: .:(zookeeper):. creating the log directory
+  file:
+    path: '{{dataLogDir}}'
+    state: directory
+    owner: kafka
+    group: kafka
+    mode: '0755'
+
+- name: .:(zookeeper):. creating myid file
+  template:
+    src: templates/myid.j2
+    dest: '{{dataDir}}/myid'
+    force: yes
+
+
