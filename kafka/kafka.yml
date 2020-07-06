@@ -1,17 +1,17 @@
 ---
-#- name: prerequisites setup
-#  hosts: Joining
-#  tasks:
-#  - import_role:
-#      name: prerequisites
-#    when: apply_prerequisites == 'true'
+- name: prerequisites setup
+  hosts: Joining
+  tasks:
+  - import_role:
+      name: prerequisites
+    when: apply_prerequisites == 'true'
 
-#- name: installation
-#  hosts: Joining
-#  tasks:
-#  - import_role:
-#      name: install
-#    when: allow_install== 'true'
+- name: installation
+  hosts: Joining
+  tasks:
+  - import_role:
+      name: install
+    when: allow_install== 'true'
 
 - name: configuration
   hosts: Joining
