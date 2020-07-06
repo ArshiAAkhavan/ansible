@@ -1,6 +1,6 @@
 ---
 - name: prerequisites setup
-  hosts: all
+  hosts: Nodes
   tasks:
   - import_role:
       name: prerequisites
@@ -9,7 +9,7 @@
       allow_firewall_config: allow_firewall_config
 
 - name: installation
-  hosts: all
+  hosts: Nodes
   tasks:
   - import_role:
       name: install
@@ -18,7 +18,7 @@
       allow_systemd_downgrade: allow_systemd_downgrade
 
 - name: configuration
-  hosts: all
+  hosts: Nodes
   tasks:
   - import_role:
       name: config 
@@ -32,7 +32,7 @@
     when: allow_run=='true'
 
 - name: starting the cluster(rest of the nodes)
-  hosts: all, !Seed_Nodes
+  hosts: Nodes, !Seed_Nodes
   serial: 1
   tasks:
   - import_role:
