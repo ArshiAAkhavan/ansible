@@ -1,0 +1,4 @@
+---
+# vars file for config
+# replica set settings
+replicaSet_name: digikala_searchad_mongo_rs

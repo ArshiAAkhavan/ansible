@@ -1,0 +1,8 @@
+---
+- name: .:(RHEL):. unistalling the Scylla
+  yum:
+    name: scylla
+    state: removed
+  ignore_errors: yes
+    
+

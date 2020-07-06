@@ -1,0 +1,14 @@
+---
+
+- name: .:(Debian):. adding the scylla repo to the remote
+  shell: curl -o /etc/yum.repos.d/scylla.repo -L http://repositories.scylladb.com/scylla/repo/ebf6cb4a-f429-4ce3-8f57-ed7f7d76cffc/centos/scylladb-3.3.repo | cat
+
+    
+- name: .:(Debian):. adding the datastax key
+  shell: curl -L https://debian.datastax.com/debian/repo_key | sudo apt-key add -
+
+- name: .:(Debian):. installing cassandra
+  apt:
+    name: scylla
+    update_cache: yes
+    stat: present 

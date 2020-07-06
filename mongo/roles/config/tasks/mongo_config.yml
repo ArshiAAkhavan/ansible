@@ -1,0 +1,7 @@
+---
+
+- name: mongod.conf template
+  template:
+    src: templates/mongod_conf.j2
+    dest: /etc/mongod.conf
+    force: yes

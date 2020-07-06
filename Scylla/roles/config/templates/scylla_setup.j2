@@ -1,0 +1,5 @@
+scylla_setup --nic {{NIC}} {%if allow_disk_mount==true %}
+ --disks {{data_disk}} 
+{%else%} 
+--no-raid-setup 
+{%endif%}

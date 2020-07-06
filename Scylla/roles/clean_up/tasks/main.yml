@@ -1,0 +1,41 @@
+---
+# tasks file for clean_up
+- name: stoping the scylla
+  systemd:
+    name: scylla-server
+    state: stopped
+  ignore_errors: yes
+
+- name: deleting the directories --> data
+  file:
+    path: /var/lib/scylla/data
+    state: absent
+- name: deleting the directories --> commitlog
+  file:
+    path: /var/lib/scylla/commitlog
+    state: absent
+- name: deleting the directories --> hints
+  file:
+    path: /var/lib/scylla/hints
+    state: absent
+- name: deleting the directories --> view_hints
+  file:
+    path: /var/lib/scylla/view_hints
+    state: absent
+
+
+- name: uninstalling the scylla for RHEL-based systems
+  import_tasks: rhel.yml
+  when: ansible_facts['os_family']|lower == 'redhat'
+- name: uninstalling the scylla for Debian-based systems
+  import_tasks: debian.yml
+  when: ansible_facts['os_family']|lower == 'debian'
+
+- name: systemctl daemon-reload
+  systemd:
+    daemon_reload: yes
+
+
+
+
+

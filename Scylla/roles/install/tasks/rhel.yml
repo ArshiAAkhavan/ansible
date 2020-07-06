@@ -1,0 +1,25 @@
+---
+
+- name: .:(RHEL):. removing abrt package
+  yum:
+    name: abrt
+    state: absent
+
+- name: .:(RHEL):. installing epel-release package
+  yum:
+    name: epel-release
+    state: installed
+
+- name: .:(RHEL):. copying the yum repo for scylla to the remote
+  copy:
+    src: files/scylla.repo
+    dest: /etc/yum.repos.d/scylla.repo
+    owner: root
+    group: root
+    mode: '644'
+
+  
+- name: .:(RHEL):. installing the scylla
+  yum:
+    name: scylla
+    state: installed

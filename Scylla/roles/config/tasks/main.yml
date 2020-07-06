@@ -1,0 +1,8 @@
+---
+# tasks file for config
+- name: cluster configuration
+  import_tasks: cluster_config.yml
+- name: sysctl configuration
+  import_tasks: sysctl_config.yml
+- name: node-setup
+  import_tasks: node_setup.yml

@@ -1,0 +1,12 @@
+---
+# tasks file for config
+
+- name: sysctl configuration
+  import_tasks: sysctl_config.yml
+
+- name: mongodb configuration
+  import_tasks: mongo_config.yml
+
+- name: replicaSet configuration
+  import_tasks: replicaSet_config.yml
+  when: ansible_default_ipv4.address in groups['Primary']

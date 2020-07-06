@@ -1,0 +1,30 @@
+---
+- name: prerequisites setup
+  hosts: all
+  tasks:
+  - import_role:
+      name: prerequisites
+    when: allow_firewall_config=='true'
+
+- name: installation
+  hosts: all
+  tasks:
+  - import_role:
+      name: install
+    when: allow_install=='true'
+
+
+- name: starting the replica set
+  hosts: all
+  tasks:
+  - import_role:
+      name: run
+    when: allow_run=='true'
+
+- name: configuration
+  hosts: all
+  tasks:
+  - import_role:
+      name: config 
+    when: allow_config=='true'
+

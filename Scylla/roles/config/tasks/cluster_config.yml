@@ -1,0 +1,19 @@
+---
+
+- name: scylla.yaml template
+  template:
+    src: templates/scylla_config.j2
+    dest: /etc/scylla/scylla.yaml
+    force: yes
+
+- name: removing the extra "," in 'seeds:",...'
+  replace:
+    path: /etc/scylla/scylla.yaml
+    regexp: '^(.*- seeds\: "),(.*")$'
+    replace: '\1\2'
+
+- name: cassandra-rackdc.properties template
+  template:
+    src: templates/cassandra_rackdc.j2
+    dest: /etc/scylla/cassandra-rackdc.properties
+    force: yes

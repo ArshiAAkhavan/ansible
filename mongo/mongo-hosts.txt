@@ -1,0 +1,20 @@
+<<<<<<< Updated upstream:mongo/mongo-hosts.txt
+[Nodes]
+172.16.18.201
+
+
+[Primary]
+172.16.18.201
+
+[Secondary]
+
+[Arbiter]
+=======
+[scylla_staging]
+172.16.12.153
+>>>>>>> Stashed changes:hosts
+
+[all:vars]
+ansible_connection=ssh
+ansible_user=root
+ansible_ssh_port=22

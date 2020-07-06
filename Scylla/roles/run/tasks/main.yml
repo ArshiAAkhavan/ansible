@@ -1,0 +1,17 @@
+---
+# tasks file for run
+
+- name: systemctl daemon-reload
+  systemd:
+    daemon_reload: yes
+
+- name: starting the nodes
+  systemd:
+    state: started
+    name: scylla-server
+  ignore_errors: yes
+
+- name: ensuring that the scylla node is up and joined to the cluster
+  wait_for:
+    port: 7199
+    delay: 30

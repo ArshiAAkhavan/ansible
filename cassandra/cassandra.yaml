@@ -1,0 +1,28 @@
+1) hostname and local ip
+2) proxy  <---> no proxy [local ip range]
+  * apt
+  * shell
+  * docker
+3) docker install
+https://docs.docker.com/engine/install/ubuntu/
+
+4) install kube...
+https://kubernetes.io/docs/tasks/tools/install-kubectl/
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+
+5) sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+# in case of ridan : kubeadm reset
+
+
+6) (mster only)
+mkdir -p $HOME/.kube
+
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+7) (master only) network plugin 
+kubectl apply -f https://docs.projectcalico.org/v3.9/manifests/calico.yaml 
+
+8) kubeadm join <token>
+
