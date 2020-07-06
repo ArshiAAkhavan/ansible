@@ -1,30 +1,19 @@
 ---
 # tasks file for clean_up
-- name: stoping the cassandra
+- name: stoping the kafka
   systemd:
-    name: cassandra
+    name: kafka
     state: stopped
   ignore_errors: yes
 
 - name: deleting the directories --> lib
   file:
-    path: /var/lib/cassandra
+    path: /var/lib/kafka
     state: absent
 - name: deleting the directories --> log
   file:
-    path: /var/log/cassandra
+    path: /var/log/kafka
     state: absent
-- name: deleting the directories --> etc
-  file:
-    path: /etc/cassandra
-    state: absent
-
-- name: uninstalling the cassandra for RHEL-based systems
-  import_tasks: rhel.yml
-  when: ansible_facts['os_family']|lower == 'redhat'
-- name: uninstalling the cassandra for Debian-based systems
-  import_tasks: debian.yml
-  when: ansible_facts['os_family']|lower == 'debian'
 
 - name: systemctl daemon-reload
   systemd:
