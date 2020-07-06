@@ -1,0 +1,18 @@
+---
+# vars file for config
+
+# prerequisites options 
+allow_disk_mount: true
+allow_firewall_config: false
+allow_proxy_config: true
+allow_clean_up: false
+
+# swap
+disable_swap: true
+
+# disk management
+disk: /dev/sdb
+destination: /var/lib/kafka
+filesystem: ext4
+
+

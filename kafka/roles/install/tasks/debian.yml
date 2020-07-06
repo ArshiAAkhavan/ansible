@@ -1,0 +1,7 @@
+---
+
+- name: .:(DEBIAN):. creating the kafka user
+  user:
+    name: kafka
+    groups: sudo
+    create_home: yes

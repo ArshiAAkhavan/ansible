@@ -1,6 +1,0 @@
----
-# tasks file for config
-- name: cluster configuration
-  import_tasks: cluster_config.yml
-- name: node configuration
-  import_tasks: node_config.yml

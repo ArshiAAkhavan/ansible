@@ -1,0 +1,15 @@
+---
+
+- name: .:(kafka):. starting the nodes
+  systemd:
+    state: started
+    name: kafka
+  ignore_errors: yes
+
+- name: .:(kafka):. ensuring that the kafka node is up and joined to others
+  wait_for:
+          #    host: 0.0.0.0
+          #    port: 9092
+    timeout: 3
+
+

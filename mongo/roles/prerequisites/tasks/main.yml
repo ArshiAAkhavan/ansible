@@ -1,6 +1,0 @@
----
-# tasks file for prerequisites
-- name: firewall configuration
-  import_role:
-    name: firewall
-  when: allow_firewall_config=='true'

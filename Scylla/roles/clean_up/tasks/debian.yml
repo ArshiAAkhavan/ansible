@@ -1,7 +1,0 @@
----
-- name: .:(Debian):. unistalling the cassandra
-  apt:
-    name: scylla
-    state: absent
-  ignore_errors: yes
-    
