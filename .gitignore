@@ -2,8 +2,8 @@
 *.swo
 *.swn
 
-raw/*
-cassandra/*
-mongo/*
-Scylla/*
+#raw/*
+#cassandra/*
+#mongo/*
+#Scylla/*
 
