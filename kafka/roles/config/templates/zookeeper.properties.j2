@@ -34,3 +34,6 @@ syncLimit={{syncLimit}}
 {% for zookeeper in groups['Zookeeper'] %}server.{{loop.index}}={{zookeeper}}:2888:3888
 {% endfor %}
 
+4lw.commands.whitelist=*
+
+
