@@ -11,13 +11,3 @@
 
 - name: sysctl -p
   command: sysctl -p
-
-- name: Remove swapfile from /etc/fstab
-  mount:
-    name: swap
-    fstype: swap
-    state: absent
-  when: disable_swap == 'true'
-
-- name: Disable swap
-  command: swapoff -a
