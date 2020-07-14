@@ -4,9 +4,6 @@
   tasks:
   - import_role:
       name: prerequisites
-    vars:
-      allow_clean_up: allow_clean_up
-      allow_firewall_config: allow_firewall_config
 
 - name: installation
   hosts: Nodes

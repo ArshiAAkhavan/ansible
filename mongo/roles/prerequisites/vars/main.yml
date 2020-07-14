@@ -5,7 +5,6 @@
 allow_disk_mount: true
 allow_firewall_config: false
 allow_proxy_config: true
-allow_clean_up: false
 
 # swap
 disable_swap: true

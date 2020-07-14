@@ -4,7 +4,6 @@
   tasks:
   - import_role:
       name: prerequisites
-    when: allow_firewall_config=='true'
 
 - name: installation
   hosts: all

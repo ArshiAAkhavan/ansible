@@ -20,9 +20,3 @@
   import_role:
     name: firewall
   when: allow_firewall_config == true
-
-- name: removeing the footprints of previous setups
-  import_role:
-    name: clean_up
-  when: allow_clean_up == true 
- 
