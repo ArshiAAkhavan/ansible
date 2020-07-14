@@ -1,7 +1,16 @@
 prerequisites
 =========
 
-this role just calls for the firewall role and clean_up role
+this role is set to configurate the cluster requirment such as:
+
+	. proxy setting for package manager
+	. mounting external disk to a certain directory
+	. configurating sysctl
+	. disabling swapfile if needed
+
+every one of the above configuration can be ignored if set to false in var/main.yml file
+
+extra data needed for each topic is also provided in var/main.yml file and is configurable
 
 Author Information
 ------------------

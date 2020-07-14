@@ -20,6 +20,8 @@ there are two key variable set that needs to be set in this playe book
 
 2) roles/config/vars/main.yml witch contains the cluster information such as cluster name and ...
 
+3) roles/prerequisites/vars/main.yml witch contains switches and essential data for things that needs to be done before we start deploying the cluster
+
 Dependencies
 ------------
 
@@ -32,7 +34,7 @@ How To Use
 
 just simply run the command below on an ansible-system
 ```
-ansible-playbook -i Scylla-hosts.txt Scylla.yml --extra-vars='{"allow_firewall_config":"true" , "allow_clean_up":"true" , "allow_install":"true" , "allow_config":"true" , "allow_run":"true"}' 
+ansible-playbook -i Scylla-hosts.txt Scylla.yml --extra-vars='{"apply_prerequisites":"true" ,  "allow_install":"true" , "allow_config":"true" , "allow_run":"true"}'
 ```
 where each variable passad by --extra-vars disables a role if not set to false
 

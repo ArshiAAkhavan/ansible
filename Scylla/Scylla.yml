@@ -1,12 +1,10 @@
 ---
 - name: prerequisites setup
-  hosts: all
+  hosts: Nodes
   tasks:
   - import_role:
       name: prerequisites
-    vars:
-      allow_clean_up: allow_clean_up
-      allow_firewall_config: allow_firewall_config
+    when: apply_prerequisites == 'true'
 
 - name: installation
   hosts: Nodes
@@ -25,11 +23,11 @@
     when: allow_config=='true'
 
 - name: starting the cluster(seed nodes)
-  hosts: Seed_Nodes
+  hosts: Nodes
   tasks:
   - import_role:
       name: run
-    when: allow_run=='true'
+    when: "allow_run=='true' and 'Seed_Nodes' in group_names"
 
 - name: starting the cluster(rest of the nodes)
   hosts: Nodes, !Seed_Nodes

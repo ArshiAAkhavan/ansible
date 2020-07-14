@@ -1,0 +1,16 @@
+---
+# vars file for config
+
+# prerequisites options 
+allow_firewall_config: false
+allow_proxy_config: true
+allow_clean_up: false
+
+# swap
+disable_swap: true
+
+
+# proxy setting
+# proxy format : http://ip:port
+proxy: http://195.201.23.73:3128
+

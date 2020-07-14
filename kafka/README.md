@@ -1,7 +1,7 @@
 Kafka cluster
 =========
 
-this is a playbook for deploying a cassandra cluster
+this is a playbook for deploying a kafka cluster
 
 Requirements
 ------------
@@ -19,11 +19,11 @@ there are three key variable set that needs to be set in this playe book
 
 1) kafka-hosts.txt wich contains the informations about Brokers IP_adress, Zookeeper nodes, and the joining nodes
 
-p.s:  note that the ansible is goiing to run only on joining nodes and uses the Brokers and Zookeepers group as additional data for configurating and ...
+p.s:  note that the ansible is going to run only on joining nodes and uses the Brokers and Zookeepers group as additional data for configurating and ...
 
 2) roles/config/vars/main.yml witch contains the cluster information such as cluster zookeeper data directory , brokers data directory ...
 
-3) vim roles/prerequisites/vars/main.yml witch contains switches and essential data for things that needs to be done before we start deploying the cluster
+3) roles/prerequisites/vars/main.yml witch contains switches and essential data for things that needs to be done before we start deploying the cluster
 
 Dependencies
 ------------

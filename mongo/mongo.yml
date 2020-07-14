@@ -4,6 +4,7 @@
   tasks:
   - import_role:
       name: prerequisites
+    when: apply_prerequisites == 'true'
 
 - name: installation
   hosts: Nodes
