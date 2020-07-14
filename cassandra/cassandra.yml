@@ -29,7 +29,7 @@
   tasks:
   - import_role:
       name: run
-    when: "allow_run=='true' && 'Seed_Nodes' in group_names"
+    when: "allow_run=='true' and 'Seed_Nodes' in group_names"
 
 - name: starting the cluster(rest of the nodes)
   hosts: Nodes, !Seed_Nodes

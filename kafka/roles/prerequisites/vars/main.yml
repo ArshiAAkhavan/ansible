@@ -15,4 +15,7 @@ disk: /dev/sdb
 destination: /var/lib/kafka
 filesystem: ext4
 
+# proxy setting
+# proxy format : http://ip:port
+proxy: http://195.201.23.73:3128
 

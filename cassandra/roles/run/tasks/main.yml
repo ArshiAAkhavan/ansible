@@ -1,10 +1,6 @@
 ---
 # tasks file for run
 
-- name: systemctl daemon-reload
-  systemd:
-    daemon_reload: yes
-
 - name: starting the nodes
   systemd:
     state: restarted

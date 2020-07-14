@@ -11,7 +11,7 @@
   - name: .(RHEL):. adding new proxy to yum.conf
     lineinfile:
       path: /etc/yum.conf
-      line: proxy=http://195.201.23.73:3128
+      line: "proxy={{proxy}}"
       create: yes
       state: present
 
