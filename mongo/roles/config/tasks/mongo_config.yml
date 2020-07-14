@@ -5,3 +5,10 @@
     src: templates/mongod_conf.j2
     dest: /etc/mongod.conf
     force: yes
+
+- name: enabling mongodb
+  systemd:
+    name: mongod
+    enabled: yes
+    daemon_reload: yes
+

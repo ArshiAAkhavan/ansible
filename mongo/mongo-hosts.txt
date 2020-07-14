@@ -1,9 +1,9 @@
-[Nodes]
+[Nodes]		 # joining nodes
 172.16.8.101
 172.16.8.102
 172.16.8.103
 
-[Primary]
+[Primary]	#  inorder to join the rest of the nodes 
 172.16.8.101
 
 [Secondary]

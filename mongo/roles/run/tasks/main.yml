@@ -1,6 +1,0 @@
----
-# tasks file for run
-- name: starting the nodes
-  systemd:
-    name: mongod          
-    state: started
