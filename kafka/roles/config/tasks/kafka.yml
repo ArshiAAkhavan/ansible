@@ -40,4 +40,10 @@
     owner: root
     group: root
     mode: '644'
-  
+
+- name: .:(kafka):. enabling kafka
+  systemd:
+    name: zookeeper
+    daemon_reload: yes
+    enabled: yes
+

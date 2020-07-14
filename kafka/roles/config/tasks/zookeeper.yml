@@ -37,4 +37,9 @@
     dest: '{{dataDir}}/myid'
     force: yes
 
+- name: .:(zookeeper):. enabling zookeeper
+  systemd:
+    name: zookeeper
+    daemon_reload: yes
+    enabled: yes
 
