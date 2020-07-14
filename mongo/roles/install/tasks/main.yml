@@ -12,3 +12,5 @@
   systemd:
     name: mongod
     enabled: yes
+    daemon_reload: yes
+
