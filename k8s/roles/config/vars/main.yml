@@ -1,0 +1,15 @@
+---
+# vars file for config
+
+# kafka:
+log_dir: /var/lib/kafka
+offsets_topic_RF: 3
+delete_topic_enable: true
+
+# zookeepr:
+dataDir: /var/lib/zookeeper
+dataLogDir: /var/log/zookeeper
+maxClientCnxns: 50
+tickTime: 2000
+initLimit: 10
+syncLimit: 5

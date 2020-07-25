@@ -1,0 +1,10 @@
+---
+# tasks file for config
+
+- name: zookeeper configuration
+  import_tasks: zookeeper.yml
+  when: "'Zookeeper' in group_names"
+
+- name: kafka configuration
+  import_tasks: kafka.yml
+  when: "'Broker' in group_names"

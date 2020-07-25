@@ -1,0 +1,15 @@
+---
+
+- name: systemctl daemon-reload
+  systemd:
+    daemon_reload: yes
+
+- name: starting the zookeeper nodes
+  import_tasks: zookeeper.yml
+  when: "'Zookeeper' in group_names and mode=='zookeeper'"
+
+- name: starting the kafka brokers
+  import_tasks: kafka.yml
+  when: "'Broker' in group_names and mode=='kafka'"
+
+

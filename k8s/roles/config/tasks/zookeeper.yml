@@ -1,0 +1,45 @@
+---
+
+- name: .:(zookeeper):. zookeeper.properties template
+  template:
+    src: templates/zookeeper.properties.j2
+    dest: /home/kafka/kafka/config/zookeeper.properties
+    force: yes
+
+
+- name: .:(zookeepr):. creating the zookeepr.serive file
+  copy:
+    src: files/zookeeper.service
+    dest: /etc/systemd/system/zookeeper.service
+    owner: root
+    group: root
+    mode: '644'
+
+- name: .:(zookeeper):. creating the data directory
+  file:
+    path: '{{dataDir}}'
+    state: directory
+    owner: kafka
+    group: kafka
+    mode: '0755'
+
+- name: .:(zookeeper):. creating the log directory
+  file:
+    path: '{{dataLogDir}}'
+    state: directory
+    owner: kafka
+    group: kafka
+    mode: '0755'
+
+- name: .:(zookeeper):. creating myid file
+  template:
+    src: templates/myid.j2
+    dest: '{{dataDir}}/myid'
+    force: yes
+
+- name: .:(zookeeper):. enabling zookeeper
+  systemd:
+    name: zookeeper
+    daemon_reload: yes
+    enabled: yes
+

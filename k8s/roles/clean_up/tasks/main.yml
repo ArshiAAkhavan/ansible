@@ -1,0 +1,34 @@
+---
+# tasks file for clean_up
+- name: stoping the kafka
+  systemd:
+    name: kafka
+    state: stopped
+  ignore_errors: yes
+
+- name: deleting the directories --> lib
+  file:
+    path: /var/lib/kafka
+    state: absent
+- name: deleting the directories --> log
+  file:
+    path: /var/log/kafka
+    state: absent
+
+- name: deleting the directories --> lib
+  file:
+    path: /var/lib/zookeeper
+    state: absent
+- name: deleting the directories --> log
+  file:
+    path: /var/log/zookeeper
+    state: absent
+
+- name: systemctl daemon-reload
+  systemd:
+    daemon_reload: yes
+
+
+
+
+

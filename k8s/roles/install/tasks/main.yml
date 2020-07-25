@@ -1,0 +1,23 @@
+---
+# tasks file for install
+
+- name: create kafka directory
+  file:
+    path: /home/kafka/kafka
+    state: directory
+    mode: '0777'
+
+- name: Extract kafka.tgz into /home/kafka/kafka
+  unarchive:
+    src: files/kafka.tgz
+    dest: /home/kafka/kafka
+    extra_opts: [--strip=1] 
+
+- name: installation playbook for RHEL-based systems
+  import_tasks: rhel.yml
+  when: ansible_facts['os_family']|lower == 'redhat'
+
+- name: installation playbook for Debian-based systems
+  import_tasks: debian.yml
+  when: ansible_facts['os_family']|lower == 'debian'
+
