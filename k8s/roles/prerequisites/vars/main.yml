@@ -1,8 +1,8 @@
 ---
-# vars file for config
+# vars file for prerequisities
 
 # prerequisites options 
-allow_disk_mount: true
+allow_disk_mount: false
 allow_firewall_config: false
 allow_proxy_config: true
 allow_clean_up: false
@@ -12,10 +12,12 @@ disable_swap: true
 
 # disk management
 disk: /dev/sdb
-destination: /var/lib/kafka
+destination: /var/lib
 filesystem: ext4
 
 # proxy setting
 # proxy format : http://ip:port
 proxy: http://195.201.23.73:3128
 
+# no_proxy format: server1,server2, .... ,server N,  (needs to end with a ",")
+no_proxy: "reg.pegah.tech,"

@@ -14,5 +14,45 @@
       line: "proxy={{proxy}}"
       create: yes
       state: present
+ 
+- name: .:(DEBIAN):.
+  when: ansible_facts['os_family']|lower == 'debian'
+  block:
+  - name: .:(DEBIAN):. creating apt proxy file
+    file:
+      path: /etc/apt/apt.conf.d/proxy.conf
+      state: touch
+      mode: '0644'
+
+  - name: .:(DEBIAN):. removing previous proxy from yum.conf
+    replace:
+      path: /etc/apt/apt.conf.d/proxy.conf
+      regexp: '^(Acquire::.*)$'
+      replace: '#\1'
+
+  - name: .(DEBIAN):. adding new proxy to yum.conf::HTTP
+    lineinfile:
+      path: /etc/apt/apt.conf.d/proxy.conf
+      line: 'Acquire::http::Proxy "{{proxy}}";'
+      create: yes
+      state: present
+
+  - name: .(DEBIAN):. adding new proxy to yum.conf::HTTPS
+    lineinfile:
+      path: /etc/apt/apt.conf.d/proxy.conf
+      line: 'Acquire::https::Proxy "{{proxy}}";'
+      create: yes
+      state: present
 
 
+- name: .:(DEBIAN):. creating docker proxy file
+  file:
+    path: /etc/systemd/system/docker.service.d/
+    state: directory
+    mode: '0755'
+    
+- name: setting proxy for docker
+  template:
+    src: templates/proxy_conf.j2
+    dest: /etc/systemd/system/docker.service.d/proxy.conf 
+    force: yes  
