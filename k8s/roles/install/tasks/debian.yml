@@ -1,6 +1,6 @@
 ---
 
-- name: .:(DEBIAN):. creating the kafka user
+- name: .:(DEBIAN):. installing docker
   user:
     name: kafka
     groups: sudo

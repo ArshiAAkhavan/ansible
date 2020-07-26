@@ -1,7 +1,12 @@
 ---
-- name: .:(Debian):. unistalling the cassandra
+- name: .:(Debian):. removing older docker versions
   apt:
-    name: datastax-ddc
+    name: {{item}} 
     state: absent
   ignore_errors: yes
-    
+  loop:
+  - docker
+  - docker.io
+  - docker-engine
+  - containerd 
+  - runc
