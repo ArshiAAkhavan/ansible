@@ -1,11 +1,11 @@
 ---
 # tasks file for install
 
-- name: installation playbook for RHEL-based systems
-  import_tasks: rhel.yml
-  when: ansible_facts['os_family']|lower == 'redhat'
+- name: docker installation
+  import_tasks: Docker/docker.yml
+  when: "'Master' in group_names or 'Worker' in group_names"
 
-- name: installation playbook for Debian-based systems
-  import_tasks: debian.yml
-  when: ansible_facts['os_family']|lower == 'debian'
+- name: k8s installation
+  import_tasks: Kubernets/kubernets.yml
+  when: "'Master' in group_names or 'Worker' in group_names"
 

@@ -1,7 +1,0 @@
----
-
-- name: .:(DEBIAN):. installing docker
-  user:
-    name: kafka
-    groups: sudo
-    create_home: yes

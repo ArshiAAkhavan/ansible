@@ -1,0 +1,27 @@
+---
+
+- name: .:(DEBIAN):. adding kubernets official GPG  key
+  shell: curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+  environment:
+    http_proxy: http://195.201.23.73:3128  
+    https_proxy: http://195.201.23.73:3128  
+
+- name: .:(DEBIAN):. adding kubernets official GPG key
+  lineinfile:
+      path: /etc/apt/sources.list.d/kubernetes.list
+      line: 'deb https://apt.kubernetes.io/ kubernetes-xenial main'
+      create: yes
+      state: present
+
+
+- name: .:(DEBIAN):. installing kubelet , kubeadm , kubectl
+  apt:
+    state: present
+    update_cache: yes
+    pkg:
+    - kubelet
+    - kubeadm
+    - kubectl    
+  
+- name: .:(DEBIAN):. apt-mark hold for kubernets packages
+  shell: apt-mark hold kubelet kubeadm kubectl

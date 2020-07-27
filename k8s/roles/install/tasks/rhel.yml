@@ -1,7 +1,0 @@
----
-
-- name: .:(RHEL):. creating the kafka user
-  user:
-    name: kafka
-    groups: wheel
-    create_home: yes
