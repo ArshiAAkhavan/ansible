@@ -8,10 +8,10 @@
 
 [Master]
 172.16.8.1
-172.16.8.2
-172.16.8.3
 
 [Worker]
+172.16.8.2
+172.16.8.3
 172.16.8.4
 172.16.8.5
 
@@ -23,3 +23,5 @@
 ansible_connection=ssh
 ansible_user=root
 ansible_ssh_port=22
+
+env_proxy="http://195.201.23.73:3128"

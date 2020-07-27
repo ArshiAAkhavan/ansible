@@ -3,8 +3,8 @@
 - name: .:(DEBIAN):. adding kubernets official GPG  key
   shell: curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
   environment:
-    http_proxy: http://195.201.23.73:3128  
-    https_proxy: http://195.201.23.73:3128  
+    http_proxy: "{{env_proxy}}" 
+    https_proxy: "{{env_proxy}}" 
 
 - name: .:(DEBIAN):. adding kubernets official GPG key
   lineinfile:

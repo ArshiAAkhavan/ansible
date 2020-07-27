@@ -1,10 +1,45 @@
 ---
 # tasks file for config
 
-- name: zookeeper configuration
-  import_tasks: zookeeper.yml
-  when: "'Zookeeper' in group_names"
+- name: kubeadm init for a master
+  shell: "kubeadm init --pod-network-cidr=10.244.0.0/16 | cat"
+  when: "'Master' in group_names"
+  run_once: yes
 
-- name: kafka configuration
-  import_tasks: kafka.yml
-  when: "'Broker' in group_names"
+
+- name: making the .kube directory
+  file:
+    path: "/root/.kube"
+    state: directory
+    mode: '0755'
+  when: "'Master' in group_names"
+  run_once: yes
+
+- name: copying /etc/kubernetes/admin.conf $HOME/.kube/config
+  copy:
+    src: /etc/kubernetes/admin.conf
+    dest: "/root/.kube/config"
+    mode: '0644'
+    owner: root
+    group: root
+    remote_src: yes
+  when: "'Master' in group_names"
+  run_once: yes
+
+- name: apply network plugin 
+  shell: "kubectl apply -f {{network_plugin}} | cat"
+  # environment:
+  #   http_proxy: "{{env_proxy}}"  
+  #   https_proxy: "{{env_proxy}}"  
+  when: "'Master' in group_names"
+  run_once: yes
+
+- name: creating joining command 
+  shell: kubeadm token create --print-join-command
+  register: joinCommand
+  when: "'Master' in group_names"
+  run_once: yes
+
+- name: joining other workers
+  shell: "{{joinCommand.stdout}}"
+  when: "'Worker' in group_names"

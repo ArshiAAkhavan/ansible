@@ -8,8 +8,3 @@
 - name: k8s installation
   import_tasks: Kubernets/kubernets.yml
   when: "'Master' in group_names or 'Worker' in group_names"
-
-- name: loadbalancer installation
-  import_tasks: LoadBalancer/loadbalancer.yml
-  when: "'Load-Balancer' in group_names"
-
