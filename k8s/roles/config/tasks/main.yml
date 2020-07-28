@@ -9,8 +9,15 @@
   shell: kubeadm token create --print-join-command
   register: joinCommand
   when: "'Master' in group_names"
-  run_once: yes
+
+- set_fact: count={{joinCommand.stdout}}
+  when: "'Master' in group_names"
+
+- name: debug
+  debug:
+    msg: "{{hostvars[groups['Master'][0]]['joinCommand']['stdout']}}"
+
 
 - name: joining other workers
-  shell: "{{joinCommand.stdout}}"
+  shell: "{{hostvars[groups['Master'][0]]['joinCommand']['stdout']}}"
   when: "'Worker' in group_names and 'Joining' in group_names"

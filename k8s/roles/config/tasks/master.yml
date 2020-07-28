@@ -18,7 +18,7 @@
   copy:
     src: /etc/kubernetes/admin.conf
     dest: "/root/.kube/config"
-    mode: '0644'
+    mode: '0755'
     owner: root
     group: root
     remote_src: yes
