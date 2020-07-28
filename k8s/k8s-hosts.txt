@@ -24,5 +24,9 @@ ansible_connection=ssh
 ansible_user=root
 ansible_ssh_port=22
 
+<<<<<<< HEAD
 env_HTTP_proxy="http://195.201.23.73:3128"
 env_HTTPS_proxy="http://195.201.23.73:3128"
+=======
+env_proxy="http://195.201.23.73:3128"
+>>>>>>> cc4eda31b0bc8d927bc24ce377986a98ae31315d
