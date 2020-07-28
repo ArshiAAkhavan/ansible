@@ -1,3 +1,5 @@
+#for now we only support single master mode
+
 [Joining]
 172.16.8.4
 
