@@ -14,7 +14,7 @@
     when: allow_install== 'true'
 
 - name: configuration
-  hosts: Joining
+  hosts: all
   tasks:
   - import_role:
       name: config 

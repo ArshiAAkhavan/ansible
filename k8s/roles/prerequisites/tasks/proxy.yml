@@ -24,20 +24,20 @@
       state: touch
       mode: '0644'
 
-  - name: .:(DEBIAN):. removing previous proxy from yum.conf
+  - name: .:(DEBIAN):. removing previous proxy from /etc/apt/apt.conf.d/proxy.confproxy.conf
     replace:
       path: /etc/apt/apt.conf.d/proxy.conf
       regexp: '^(Acquire::.*)$'
       replace: '#\1'
 
-  - name: .(DEBIAN):. adding new proxy to yum.conf::HTTP
+  - name: .(DEBIAN):. adding new proxy to /etc/apt/apt.conf.d/proxy.confproxy.conf::HTTP
     lineinfile:
       path: /etc/apt/apt.conf.d/proxy.conf
       line: 'Acquire::http::Proxy "{{proxy}}";'
       create: yes
       state: present
 
-  - name: .(DEBIAN):. adding new proxy to yum.conf::HTTPS
+  - name: .(DEBIAN):. adding new proxy to /etc/apt/apt.conf.d/proxy.confproxy.conf::HTTPS
     lineinfile:
       path: /etc/apt/apt.conf.d/proxy.conf
       line: 'Acquire::https::Proxy "{{proxy}}";'
