@@ -19,11 +19,3 @@
   - import_role:
       name: config 
     when: allow_config== 'true'
-
-- name: starting nodes
-  hosts: Joining
-  serial: 1
-  tasks:
-  - import_role:
-      name: run
-    when: allow_run== 'true'

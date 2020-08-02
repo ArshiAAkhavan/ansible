@@ -24,7 +24,4 @@
 
 - name: apply network plugin 
   shell: "kubectl apply -f {{network_plugin}} | cat"
-  # environment:
-  #   http_proxy: "{{env_proxy}}"  
-  #   https_proxy: "{{env_proxy}}"  
   when: "'Master' in group_names"

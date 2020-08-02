@@ -10,8 +10,8 @@
   register: joinCommand
   when: "'Master' in group_names"
 
-- set_fact: count={{joinCommand.stdout}}
-  when: "'Master' in group_names"
+# - set_fact: count={{joinCommand.stdout}}
+#   when: "'Master' in group_names"
 
 - name: debug
   debug:
