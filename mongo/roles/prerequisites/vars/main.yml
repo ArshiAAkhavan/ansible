@@ -5,6 +5,7 @@
 allow_disk_mount: true
 allow_firewall_config: false
 allow_proxy_config: true
+allow_node_exporter_install: true
 
 # swap
 disable_swap: true

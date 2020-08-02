@@ -22,3 +22,7 @@
     name: clean_up
   when: allow_clean_up == true 
  
+- name: node_exporter installation
+  import_role:
+    name: node_exporter
+  when: allow_node_exporter_install == true
