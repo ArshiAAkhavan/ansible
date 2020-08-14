@@ -1,4 +1,5 @@
 ---
 # vars file for config
 # replica set settings
-replicaSet_name: mongo-rs
+replicaSet_name: digiad-rs
+

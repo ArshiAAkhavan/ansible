@@ -1,16 +1,16 @@
 [Nodes]		 # joining nodes
-172.16.8.101
+#172.16.18.201
 172.16.8.102
-172.16.8.103
+# 172.16.8.103
 
 [Primary]	#  inorder to join the rest of the nodes 
-172.16.18.101
+#172.16.18.201
 
 [Secondary]
-172.16.8.102
+#172.16.8.102
 
 [Arbiter]
-172.16.8.103
+#172.16.8.103
 
 [all:vars]
 ansible_connection=ssh
