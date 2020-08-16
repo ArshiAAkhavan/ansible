@@ -1,4 +1,5 @@
 ---
+
 - name: .:(RHEL):. installing the firewall
   yum:
     name: firewalld
@@ -23,6 +24,7 @@
     state: enabled
   with_inventory_hostnames:
   - all
+
 
 - name: .:(RHEL):. Allow all access to node_exporter tcp port 9100
   firewalld:
