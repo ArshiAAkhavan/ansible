@@ -24,5 +24,21 @@
   with_inventory_hostnames:
   - all
 
+- name: .:(RHEL):. Allow all access to node_exporter tcp port 9100
+  firewalld:
+    port: 9100/tcp
+    permanent: yes
+    state: enabled
+    immediate: yes
+  when: allow_node_exporter_install == true
+
+- name: .:(RHEL):. Allow all access to cassandra_exporter tcp port 9100
+  firewalld:
+    port: 9100/tcp
+    permanent: yes
+    state: enabled
+    immediate: yes
+  when: allow_cassandra_exporter_install == true
+
 - name: .:(RHEL):. reloading the firewall
   command: firewall-cmd --reload 

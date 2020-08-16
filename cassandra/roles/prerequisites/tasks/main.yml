@@ -19,6 +19,9 @@
 - name: firewall configuration
   import_role: 
     name: firewall
+  vars:
+    allow_node_exporter_install: allow_node_exporter_install
+    allow_cassandra_exporter_install: allow_cassandra_exporter_install
   when: allow_firewall_config == true
 
 - name: removeing the footprints of previous setups
@@ -30,3 +33,8 @@
   import_role:
     name: node_exporter
   when: allow_node_exporter_install == true
+
+- name: cassandra_exporter installation
+  import_role:
+    name: cassandra_exporter
+  when: allow_cassandra_exporter_install == true
