@@ -32,9 +32,9 @@
     immediate: yes
   when: allow_node_exporter_install == true
 
-- name: .:(RHEL):. Allow all access to cassandra_exporter tcp port 9100
+- name: .:(RHEL):. Allow all access to cassandra_exporter tcp port 8080
   firewalld:
-    port: 9100/tcp
+    port: 8080/tcp
     permanent: yes
     state: enabled
     immediate: yes
