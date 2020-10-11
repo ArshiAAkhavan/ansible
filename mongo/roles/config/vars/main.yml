@@ -1,5 +1,5 @@
 ---
 # vars file for config
 # replica set settings
-replicaSet_name: digiad-rs
+replicaSet_name: mxmt-rs
 

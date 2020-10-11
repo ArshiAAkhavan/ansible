@@ -5,6 +5,8 @@
     src: templates/mongod_conf.j2
     dest: /etc/mongod.conf
     force: yes
+    group: mongod
+    owner: mongod
 
 - name: enabling mongodb
   systemd:
