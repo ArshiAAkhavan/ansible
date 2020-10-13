@@ -8,3 +8,8 @@
   
 - name: starting the node_exporter
   import_tasks: run.yml
+
+- name: firewall configuration
+  import_tasks: firewall.yml
+  when: allow_firewall_config== true
+  

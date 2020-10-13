@@ -21,12 +21,12 @@
     name: firewall
   when: allow_firewall_config == true
 
-- name: removeing the footprints of previous setups
-  import_role:
-    name: clean_up
-  when: allow_clean_up == true 
- 
+- set_fact:
+    firewall_config: "{{allow_firewall_config}}"
+
 - name: node_exporter installation
   import_role:
     name: node_exporter
   when: allow_node_exporter_install == true
+  vars:
+    allow_firewall_config: "{{firewall_config}}"
