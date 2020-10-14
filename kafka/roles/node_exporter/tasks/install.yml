@@ -14,7 +14,6 @@
     dest:  /opt/node_exporter/
     remote_src: yes
   retries: 3
-  delay: 3
   register: result
   until: result is succeeded
 
