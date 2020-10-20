@@ -1,0 +1,8 @@
+[Nodes]
+172.16.55.55    ansible_ssh_pass=P3g@hTechNew  hostname=node1
+172.16.55.56    ansible_ssh_pass=P3g@hTechNew  hostname=node2
+
+[all:vars]
+ansible_connection=ssh
+ansible_user=root
+ansible_ssh_port=22
