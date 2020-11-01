@@ -1,0 +1,31 @@
+---
+
+- name: .:(DEBIAN):. installing the prerequistes packages
+  apt:
+    state: present
+    update_cache: yes
+    pkg:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - gnupg-agent
+    - software-properties-common
+
+- name: .:(DEBIAN):. adding dockers official GPG  key
+  shell: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+- name: .:(DEBIAN):. adding docker apt-repository
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ hostvars[inventory_hostname].ansible_distribution_release }} stable"
+    state: present
+
+- name: .:(DEBIAN):. installing docker
+  apt:
+    state: present
+    update_cache: yes
+    pkg:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+    
+  

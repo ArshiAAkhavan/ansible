@@ -1,0 +1,28 @@
+---
+
+- name: Set authorized key taken from vars
+  authorized_key:
+    user: root
+    state: present
+    key: "{{bastilion_ssh_key}}"
+
+- debug: 
+    msg: "/bin/bash /Users/mehdifallahi/infra/ansible/avabarid/roles/config/files/add_server.sh fallahi Abcd12345$ {{hostvars[inventory_hostname].hostname}} {{ansible_default_ipv4.address}} 22"
+- name: Update password
+  user:
+    name: root
+    password: "{{password_hash}}"
+    update_password: always
+
+- name: Set a hostname
+  hostname:
+    name: "{{hostvars[inventory_hostname].hostname}}" 
+
+- name: Change ssh port to 22022
+  shell: sed 's/\(.*\)Port 22/Port 22022/g' -i /etc/ssh/sshd_config && systemctl restart ssh.service
+
+
+- name: add to bastilion server
+  delegate_to: 127.0.0.1
+  shell: "/bin/bash /Users/mehdifallahi/infra/ansible/avabarid/roles/config/files/add_server.sh fallahi Abcd12345$ {{hostvars[inventory_hostname].hostname}} {{ansible_default_ipv4.address}} 22022"
+
