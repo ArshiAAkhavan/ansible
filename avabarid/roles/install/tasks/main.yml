@@ -6,11 +6,15 @@
     pkg: 
     - byobu
     - ufw
+    - wget
     state: present
     update_cache: yes
 
 - name: enable byobu
   shell: byobu-enable
+
+- name: install zsh
+  shell: '/bin/sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" | cat && chsh -s $(which zsh)'
 
 - name: docker installation
   import_tasks: Docker/docker.yml
