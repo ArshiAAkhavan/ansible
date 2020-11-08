@@ -1,9 +1,11 @@
 ---
 # tasks file for install
 
-- name: install byobu
+- name: install byobu and ufw
   apt:
-    pkg: byobu
+    pkg: 
+    - byobu
+    - ufw
     state: present
     update_cache: yes
 

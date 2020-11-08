@@ -19,7 +19,8 @@
     - 443
     - 80
     - 22022
+    - 22
 
-- name: enable ufw
-  ufw:
-    state: enabled
+# - name: enable ufw
+#   ufw:
+#     state: enabled

@@ -6,5 +6,6 @@
 #cassandra/*
 #mongo/*
 #Scylla/*
-
+avabarid/.idea/*
+*.iml
 raw/*

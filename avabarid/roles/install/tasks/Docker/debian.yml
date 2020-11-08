@@ -27,5 +27,16 @@
     - docker-ce
     - docker-ce-cli
     - containerd.io
+
+- name: .:(DEBIAN):. add deamon.json
+  copy:
+    src: files/daemon.json
+    dest: /etc/docker/daemon.json
+    owner: root
+    group: root
+
+- name: .:(DEBIAN):. docker restart
+  shell: systemctl restart docker.service
+
     
   
