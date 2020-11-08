@@ -3,11 +3,11 @@
 
 # prerequisites options 
 allow_disk_mount: true
-allow_firewall_config: true
+allow_firewall_config: false
 allow_proxy_config: true
 allow_clean_up: false
 allow_node_exporter_install: true
-allow_cassandra_exporter_install: true
+allow_cassandra_exporter_install: false
 
 # swap
 disable_swap: true
