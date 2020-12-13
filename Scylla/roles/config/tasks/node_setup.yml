@@ -15,6 +15,7 @@
     src: templates/scylla_setup.j2
     dest: /scylla_setup.sh
     force: yes
+    mode: '0777'
 
 - name: running the scylla_setup command
   shell: sh /scylla_setup.sh | cat > output.txt
