@@ -8,11 +8,11 @@
 
 - debug: 
     msg: "/bin/bash /Users/mehdifallahi/infra/ansible/avabarid/roles/config/files/add_server.sh fallahi Abcd12345$ {{hostvars[inventory_hostname].hostname}} {{ansible_default_ipv4.address}} 22"
-- name: Update password
-  user:
-    name: root
-    password: "{{password_hash}}"
-    update_password: always
+# - name: Update password
+#   user:
+#     name: root
+#     password: "{{password_hash}}"
+#     update_password: always
 
 - name: Set a hostname
   hostname:

@@ -4,15 +4,7 @@
   tasks:
   - import_role:
       name: config
-
-- name: installing
-  hosts: Nodes
-  tasks:
   - import_role:
       name: install
-
-- name: node_exporter installation
-  hosts: Nodes
-  tasks:
   - import_role:
       name: node_exporter
