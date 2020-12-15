@@ -470,12 +470,12 @@ start_rpc: {{start_rpc}}
 # prometheus port
 # By default, Scylla opens prometheus API port on port 9180
 # setting the port to 0 will disable the prometheus API.
-# prometheus_port: 9180
+prometheus_port: 9180
 #
 # prometheus address
 # By default, Scylla binds all interfaces to the prometheus API
 # It is possible to restrict the listening address to a specific one
-# prometheus_address: 0.0.0.0
+prometheus_address: {{ansible_default_ipv4.address}}
 
 # Distribution of data among cores (shards) within a node
 #
