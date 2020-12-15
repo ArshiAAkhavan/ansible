@@ -2,7 +2,7 @@
 # vars file for config
 # cluster_setting:
 # the default values are taken from Brain's cassandra node
-cluster_name: ansible-test
+cluster_name: cassandra-mx-test
 cdc_total_space_in_mb: 1713
 concurrent_compactors: 2
 compaction_throughput_mb_per_sec: 20

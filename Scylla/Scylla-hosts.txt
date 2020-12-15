@@ -1,13 +1,11 @@
 [Nodes]
-172.16.8.101	dc=dc1	rack=rack1
-172.16.8.102	dc=dc1	rack=rack2
-172.16.8.103	dc=dc2	rack=rack1
-172.16.8.104	dc=dc2	rack=rack2
+172.16.4.171	dc=dc1	rack=rack1
+172.16.4.172	dc=dc1	rack=rack2
+172.16.4.173	dc=dc1	rack=rack3
 
 [Seed_Nodes]
-172.16.8.101
-172.16.8.102
-172.16.8.103
+172.16.4.171
+172.16.4.172
 
 [all:vars]
 ansible_connection=ssh
