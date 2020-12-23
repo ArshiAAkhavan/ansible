@@ -21,7 +21,7 @@
     state: directory
     mode: '0755'
 
-- name: .:(kafka):. insuring that kafka.logs directory is empthy
+- name: .:(kafka):. insuring that kafka.logs directory is empty
   shell: rm -rf '{{log_dir}}'/*
 
 

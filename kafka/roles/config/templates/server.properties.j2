@@ -18,7 +18,7 @@
 ############################# Server Basics #############################
 
 # The id of the broker. This must be set to a unique integer for each broker.
-broker.id={{ansible_default_ipv4.address | regex_replace('^(?:\\d*.){3:3}(\\d)*$', '\\1')}}
+broker.id={{ansible_default_ipv4.address | regex_replace('(\\d*\\.){3}(\\d*)', '\\2')}}
 
 ############################# Socket Server Settings #############################
 
