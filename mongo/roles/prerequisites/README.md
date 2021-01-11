@@ -16,6 +16,6 @@ extra data needed for each topic is also provided in var/main.yml file and is co
 Author Information
 ------------------
 
-e-mail: a_akhavan@outlook.com
+e-mail: letmemakenewone@gmail.com
 
 github: ArshiAAkhavan

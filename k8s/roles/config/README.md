@@ -11,6 +11,6 @@ all variable set in the /vars/main.yml are used in cassandra.yaml file
 Author Information
 ------------------
 
-e-mail: a_akhavan@outlook.com
+e-mail: letmemakenewone@gmail.com
 
 github: ArshiAAkhavan

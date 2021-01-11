@@ -7,7 +7,7 @@ Author Information
 ------------------
 
 ArshiA Akhavan:
-e-mail: a_akhavan@outlook.com
+e-mail: letmemakenewone@gmail.com
 github: ArshiAAkhavan
 
 Zahra Aslani:

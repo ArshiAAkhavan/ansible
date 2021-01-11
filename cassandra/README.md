@@ -44,6 +44,6 @@ p.s: there is some problem with the newest version of systemd and cassandra 3.11
 Author Information
 ------------------
 
-e-mail: a_akhavan@outlook.com
+e-mail: letmemakenewone@gmail.com
 
 github: ArshiAAkhavan

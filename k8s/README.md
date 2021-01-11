@@ -45,6 +45,6 @@ where each variable passad by --extra-vars disables a role if not set to true
 Author Information
 ------------------
 
-e-mail: a_akhavan@outlook.com
+e-mail: letmemakenewone@gmail.com
 
 github: ArshiAAkhavan

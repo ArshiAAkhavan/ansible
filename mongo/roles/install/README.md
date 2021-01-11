@@ -7,6 +7,6 @@ this role installs the cassandra 3.2 package provided by datastax
 Author Information
 ------------------
 
-e-mail: a_akhavan@outlook.com
+e-mail: letmemakenewone@gmail.com
 
 github: ArshiAAkhavan
